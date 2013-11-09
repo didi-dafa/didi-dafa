@@ -8,10 +8,10 @@ exports.ჩაუშვი=function(პასუხ){
             '</head>'+
             '<body>'+
                 '<div id="მთავარი_ნაჭერი">'+
-                '<canvas id="დაფა" onmousedown="თაგვზე_დაწკაპება()" onmouseup="თაგვის_აშვება()">'+
+                '<canvas id="დაფა"">'+
                 '</canvas>'+
                 '</div>'+
                 '<script type="text/javascript" src="/გულ-ღვიძლი.js"></script>'+
             '</body>'+
         '</html>')
-}
+} 
