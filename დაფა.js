@@ -1,5 +1,4 @@
-exports.ჩაუშვი=function(პასუხ){
-    პასუხ.setHeader("Content-Type", "text/html; charset=utf-8")
+exports.ჩაუშვი=function(მოთხ, პასუხ){
     პასუხ.end(
         '<!DOCTYPE html>'+
         '<html>'+
