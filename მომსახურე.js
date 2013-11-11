@@ -25,13 +25,27 @@ function ჩაუშვი_სტატიკური_ფაილი(მი�
     if(სტატფ){
         პასუხ.setHeader("Content-Type", სტატფ.შიგთავსის_ტიპი)
         პასუხ.end(სტატფ.შიგთავსი)
-        return true;
+        return true
     }
 }
 
+function ჩაუშვი_საცავის_ფაილი(მის, პასუხ){
+    if(!მოთხ.url.match(/^\/საცავი/)){
+        return
+    }
+    
+    
+    return true
+}
 ზტგპ.createServer(function(მოთხ, პასუხ){
     if(ჩაუშვი_სტატიკური_ფაილი(მოთხ.url, პასუხ)){
-        return;
+        return
     }
+    
+    /*
+    if(ჩაუშვი_საცავის_ფაილი(მოთხ.url, პასუხ)){
+        return
+    }*/
+    
     დაფა.ჩაუშვი(პასუხ);
 }).listen(9000);
