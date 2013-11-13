@@ -42,7 +42,8 @@ var ხელი = {
     },
     გაამოძრავე: function(ხ, ჯ){
         if(this.გადამაქვს){
-            var სურათი = this.კონტ.getImageData(1, 0, this.კონტ.canvas.width, this.კონტ.canvas.height);
+            var სურათი = this.კონტ.getImageData(1, 0, 
+                this.კონტ.canvas.width, this.კონტ.canvas.height);
             this.კონტ.putImageData(imageData, 0, 0);
             console.log(სურათი)
         }

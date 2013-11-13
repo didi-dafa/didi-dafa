@@ -1,6 +1,10 @@
 var ფს=require('fs')
-exports.ჩაუშვი=function(მოთხ, პასუხ){
+
+
+
+exports.მიახატე=function(ნაქნარი){
     
-    პასუხ.end(
-        'ყვაა')
+}
+exports.მომე_ფრაგმენტი=function(ხ,ჯ,სიგანე,სიმაღლე){
+    
 } 
