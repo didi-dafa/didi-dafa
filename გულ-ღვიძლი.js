@@ -34,29 +34,32 @@ function გააგზავნე(მისამართზე, ობი�
 var ფუნჯი = {
     კონტ:კონტ,
     იხატება: false,
+    გზას_მიუმატე:function(ხ,ჯ){
+        var გლობ=მომე_გლობალური_კოორდინატები(ხ,ჯ)
+        this.გზა.push({ხ:გლობ.ხ,ჯ:გლობ.ჯ,დრო:new Date().getTime()})
+    },
     დაიწყე: function(ხ, ჯ){
         this.იხატება=true
         this.კონტ.beginPath()
         this.კონტ.moveTo(ხ, ჯ)
-        this.გზა=[{ხ:ხ,ჯ:ჯ,დრო:new Date().getTime()}]
+        this.გზა=[]
+        this.გზას_მიუმატე(ხ,ჯ)
     },
     გაამოძრავე: function(ხ, ჯ){
         if(this.იხატება){
             this.კონტ.lineTo(ხ,ჯ)
             this.კონტ.stroke()
-            var გლობ=მომე_გლობალური_კოორდინატები(ხ,ჯ)
-            this.გზა.push({ხ:გლობ.ხ,ჯ:გლობ.ჯ,დრო:new Date().getTime()})
+            this.გზას_მიუმატე(ხ,ჯ)
         }
     },
     დაასრულე: function(ხ, ჯ){
         this.იხატება=false
-        var გლობ=მომე_გლობალური_კოორდინატები(ხ,ჯ)
-        this.გზა.push({ხ:გლობ.ხ,ჯ:გლობ.ჯ,დრო:new Date().getTime()})
+        this.გზას_მიუმატე(ხ,ჯ)
         
         var გასაგზავნი_გზა=[]
-        for(var i=0;i<this.გზა.length-1;i++){
-            var ესგზა=this.გზა[i]
-            var მერეგზა=this.გზა[i+1]
+        for(var ი=0;ი<this.გზა.length-1;ი++){
+            var ესგზა=this.გზა[ი]
+            var მერეგზა=this.გზა[ი+1]
             გასაგზავნი_გზა.push({
                 ხ:ესგზა.ხ, 
                 ჯ:ესგზა.ჯ, 
