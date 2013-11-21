@@ -4,8 +4,8 @@
 }
 #მთავარი_ნაჭერი{
     position: absolute;
-    top:512;
-    bottom:512;
-    left:-512;
-    right:-512;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
 }
