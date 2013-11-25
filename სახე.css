@@ -1,6 +1,9 @@
 #დაფა{
-    width:100%;
-    height:100%;
+    position:relative;
+    top:-512px;
+    left:-512px;
+    right:-512px;
+    bottom:-512px;
 }
 #მთავარი_ნაჭერი{
     position: absolute;
@@ -8,4 +11,7 @@
     bottom:0;
     left:0;
     right:0;
+}
+body{
+    overflow:hidden;
 }
