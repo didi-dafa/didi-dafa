@@ -18,7 +18,6 @@ function მითხარი_ხოლმე_რაც_მოხდება(�
     function ახალი_მოთხოვნა(){
         მოთხოვნა.onreadystatechange=function(){
             if(მოთხოვნა.readyState==4){
-                console.log(მოთხოვნა.response)
                 if(მოთხოვნა.status==200){
                     var ნაქნარები=JSON.parse(მოთხოვნა.response)
                     ბოლო_ნაქნარის_დრო=ნაქნარები[ნაქნარები.length-1].დრო
@@ -116,7 +115,6 @@ var ფუნჯი = {
     იხატება: false,
     გზას_მიუმატე:function(ხ,ჯ){
         var გლობ=მომე_გლობალური_კოორდინატები(ხ,ჯ)
-        console.log(ხ,ჯ, გლობ.ხ, გლობ.ჯ)
         this.გზა.push({ხ:გლობ.ხ,ჯ:გლობ.ჯ,დრო:new Date().getTime()})
     },
     დაიწყე: function(ხ, ჯ){
