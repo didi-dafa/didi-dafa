@@ -1,6 +1,4 @@
-exports.ჩაუშვი=function(მოთხ, პასუხ){
-    პასუხ.end(
-        '<!DOCTYPE html>'+
+var ზტაე = '<!DOCTYPE html>'+
         '<html>'+
             '<head>'+
                 '<link rel="stylesheet" href="/სახე.css">'+
@@ -12,5 +10,8 @@ exports.ჩაუშვი=function(მოთხ, პასუხ){
                 '</div>'+
                 '<script type="text/javascript" src="/გულ-ღვიძლი.js"></script>'+
             '</body>'+
-        '</html>')
-} 
+        '</html>'
+
+exports.ჩაუშვი=function(მოთხ, პასუხ){
+    პასუხ.end(ზტაე)
+}
