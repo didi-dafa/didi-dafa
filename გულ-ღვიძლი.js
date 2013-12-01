@@ -239,17 +239,18 @@ var დაფა = function() {
     })
 
     that.ნახაზი.onmousedown = function(მოვლ) {
-        if (მიჭირავს) {
+        console.log(მოვლ)
+        if (მიჭირავს && მოვლ.button===0) {
             მიჭირავს.დაიწყე(მოვლ.clientX, მოვლ.clientY)
         }
     }
     that.ნახაზი.onmousemove = function(მოვლ) {
-        if (მიჭირავს) {
+        if (მიჭირავს && მოვლ.button===0) {
             მიჭირავს.გაამოძრავე(მოვლ.clientX, მოვლ.clientY)
         }
     }
     that.ნახაზი.onmouseup = function(მოვლ) {
-        if (მიჭირავს) {
+        if (მიჭირავს && მოვლ.button===0) {
             მიჭირავს.დაასრულე(მოვლ.clientX, მოვლ.clientY)
         }
     }
@@ -290,6 +291,8 @@ var ფუნჯი = {
     },
     დაასრულე: function(ხ, ჯ) {
         this.იხატება = false
+        
+        this.გზას_მიუმატე(ხ, ჯ)
 
         var გასაგზავნი_გზა = []
         for (var ი = 0; ი < this.გზა.length - 1; ი++) {
