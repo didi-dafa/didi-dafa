@@ -1,9 +1,10 @@
 #დაფა{
     position:relative;
-    top:-512px;
-    left:-512px;
-    right:-512px;
-    bottom:-512px;
+    top:50px;
+    left:50px;
+    right:50px;
+    bottom:50px;
+    border:solid 1px;
 }
 #მთავარი_ნაჭერი{
     position: absolute;
