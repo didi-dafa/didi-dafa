@@ -242,7 +242,6 @@ var დაფა = function() {
     })
 
     that.ნახაზი.onmousedown = function(მოვლ) {
-        console.log(მოვლ)
         if (მიჭირავს && მოვლ.button===0) {
             მიჭირავს.დაიწყე(მოვლ.clientX, მოვლ.clientY)
         }
