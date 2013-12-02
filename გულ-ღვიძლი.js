@@ -211,9 +211,9 @@ var დაფა = function() {
         },
         გააახლეკურსორი: function() {
             if (მიჭირავს === ხელი) {
-                document.body.style.cursor = 'pointer'
+                დაფა.ნახაზი.style.cursor = 'pointer'
             } else {
-                document.body.style.cursor = 'auto'
+                დაფა.ნახაზი.style.cursor = 'auto'
             }
         },
         მომე_გლობალური_კოორდინატები: function(ლოკალური_ხ, ლოკალური_ჯ) {

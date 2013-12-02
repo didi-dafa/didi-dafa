@@ -72,6 +72,7 @@ exports.მიახატე=function(ნაქნარი){
                     
                 var კონტ = ფრაგმენტი.getContext('2d')
                 
+                კონტ.beginPath()
                 კონტ.moveTo(წინა_ხ,წინა_ჯ)
                 კონტ.lineTo(ხ,ჯ)
                 კონტ.stroke()
