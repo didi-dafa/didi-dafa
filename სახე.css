@@ -13,6 +13,28 @@
     left:0;
     right:0;
 }
+#სახარახურე{
+    position: absolute;
+    top:0;
+    right:0;
+    width:170px;
+    height:600px;
+    background-color: rgba(103, 172, 240, 0.5);
+    border-bottom-left-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    /*103 172 240 #58a9f3*/
+}
+#სახელი{
+    width:100%;
+}
+#ენა{
+    width:100%;
+}
+#მომხმარებლები{
+    width:100%;
+    height:200px;
+}
 body{
     overflow:hidden;
 }
