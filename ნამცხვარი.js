@@ -2,17 +2,24 @@ exports.მომე=function(მოთხ, სახელი){
     var ნამცხვარი = მოთხ.headers.cookie
     if(!ნამცხვარი){
         return
-    }       
-    var დაჭრილი_ნამცხვარი=ნამცხვარი.split(';')
-
-    for(var ნ in დაჭრილი_ნამცხვარი){
-        var ნაწყვეტები = დაჭრილი_ნამცხვარი[ნ].split('=')
-        if(ნაწყვეტები[0].trim()==სახელი){
-            return ნაწყვეტები[1]
-        }
     }
+    
+    var ნაჭერი = ნამცხვარი.match(encodeURIComponent(სახელი)+"=(.*);")
+    if(!ნაჭერი){
+        return 
+    }
+    return ნაჭერი[1]
 }
 
 exports.მიე=function(პასუხ, სახელი, მნიშვნელობა){
-    პასუხ.setHeader('Set-Cookie', სახელი+'='+მნიშვნელობა)
+    
+    var არსებული = პასუხ.getHeader('Set-Cookie'),
+       მისაწერი = encodeURIComponent(სახელი)+'='+encodeURIComponent(მნიშვნელობა)
+       
+    if(!არსებული){
+        პასუხ.setHeader('Set-Cookie', [მისაწერი])
+    }else{
+        არსებული.push(მისაწერი)
+        პასუხ.setHeader('Set-Cookie', არსებული)
+    }
 }
