@@ -39,6 +39,7 @@ var ზტაე = '<!DOCTYPE html>'+
                 '</div>'+
                 '</div>'+
                 '<script type="text/javascript" src="/გულ-ღვიძლი.js"></script>'+
+                '<script type="text/javascript" src="/სახარახურე.js"></script>'+
             '</body>'+
         '</html>'
 
