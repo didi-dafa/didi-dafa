@@ -8,6 +8,7 @@
 }
 #მთავარი_ნაჭერი{
     position: absolute;
+    overflow: hidden;
     top:0;
     bottom:0;
     left:0;
@@ -23,6 +24,7 @@
     border-bottom-left-radius: 8px;
     padding: 10px;
     text-align: center;
+    line-height: 25px;
     /*103 172 240 #58a9f3*/
 }
 #სახელი{
