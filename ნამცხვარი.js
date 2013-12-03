@@ -4,7 +4,7 @@ exports.მომე=function(მოთხ, სახელი){
         return
     }
     
-    var ნაჭერი = ნამცხვარი.match(encodeURIComponent(სახელი)+"=(.*);")
+    var ნაჭერი = ნამცხვარი.match(encodeURIComponent(სახელი)+"=(.*)(;|$)")
     if(!ნაჭერი){
         return 
     }
@@ -13,6 +13,7 @@ exports.მომე=function(მოთხ, სახელი){
 
 exports.მიე=function(პასუხ, სახელი, მნიშვნელობა){
     
+    console.log(მნიშვნელობა)
     var არსებული = პასუხ.getHeader('Set-Cookie'),
        მისაწერი = encodeURIComponent(სახელი)+'='+encodeURIComponent(მნიშვნელობა)
        
@@ -20,6 +21,7 @@ exports.მიე=function(პასუხ, სახელი, მნიშვ�
         პასუხ.setHeader('Set-Cookie', [მისაწერი])
     }else{
         არსებული.push(მისაწერი)
+        console.log('არსებული ნამცხვრები',არსებული.length)
         პასუხ.setHeader('Set-Cookie', არსებული)
     }
 }
