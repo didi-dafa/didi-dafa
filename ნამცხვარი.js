@@ -4,16 +4,14 @@ exports.მომე=function(მოთხ, სახელი){
         return
     }
     
-    var ნაჭერი = ნამცხვარი.match(encodeURIComponent(სახელი)+"=(.*)(;|$)")
+    var ნაჭერი = ნამცხვარი.match(encodeURIComponent(სახელი)+"=(.*?)(;|$)")
     if(!ნაჭერი){
         return 
     }
-    return ნაჭერი[1]
+    return decodeURIComponent(ნაჭერი[1])
 }
 
 exports.მიე=function(პასუხ, სახელი, მნიშვნელობა){
-    
-    console.log(მნიშვნელობა)
     var არსებული = პასუხ.getHeader('Set-Cookie'),
        მისაწერი = encodeURIComponent(სახელი)+'='+encodeURIComponent(მნიშვნელობა)
        

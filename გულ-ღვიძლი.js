@@ -59,13 +59,16 @@ function გააგზავნე(მისამართზე, უკუ�
 
 function მომე_ნამცხვარი(სახელი){
     var ნამცხვრები = document.cookie.match(
-            encodeURIComponent(სახელი)+"=(.*)(;|$)")
+            encodeURIComponent(სახელი)+"=(.*?)(;|$)")
     if(!ნამცხვრები){
         return 
     }
-    
-    console.log(decodeURIComponent(ნამცხვრები[1])+'-123')
     return decodeURIComponent(ნამცხვრები[1])
+}
+
+function მიე_ნამცხვარი(სახელი, მნიშვნელობა){
+    document.cookie=encodeURIComponent(სახელი)+'='+
+            encodeURIComponent(მნიშვნელობა)
 }
 
 function თქვი_რომ_წავნაცვლდი() {
@@ -81,6 +84,7 @@ var დაფა = function() {
             this.ნახაზი.height = window.innerHeight + this.კანტი.ჯ * 2
             console.log(this.ნახაზი.width, this.ნახაზი.height)
             this.გამოთვალე_კოორდინატები()
+            this.გააახლეკურსორი()
             this.განაახლე_ფრაგმენტი(0,0, this.ნახაზი.width, this.ნახაზი.height)
         },
         განაახლე_ფრაგმენტი: function(ხ, ჯ, სიგანე, სიმაღლე){
@@ -360,4 +364,4 @@ var ხელი = {
         თქვი_რომ_წავნაცვლდი()
     },
 }
-var მიჭირავს = ფუნჯი
+var მიჭირავს = ხელი
