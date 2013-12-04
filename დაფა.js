@@ -28,8 +28,6 @@ var ზტაე = '<!DOCTYPE html>'+
                     '<div>'+
                         'მომხმარებლები'+
                         '<select id="მომხმარებლები" multiple="multiple">'+
-                            '<option value="0" selected>ზეზვა</option>'+
-                            '<option value="1">მზია</option>'+
                         '</select>'+
                     '</div>'+
                     '<hr/>'+
