@@ -10,11 +10,15 @@ var ზტაე = '<!DOCTYPE html>'+
                 '<div id="სახარახურე">'+
                     '<div>'+
                         '<img alt="ლოგო" /><br/>'+
+                        '<span data-თარგმანის-გასაღები="დიდი დაფა">'+
                         'დიდი დაფა'+
+                        '</span>'+
                     '</div>'+
                     '<hr/>'+
                     '<div>'+
+                        '<span data-თარგმანის-გასაღები="ენა">'+
                         'ენა'+
+                        '</span>'+
                         '<select id="ენა" class="სავსე">'+
                         '<option value="0" selected>ქართული</option>'+
                         '</select>'+
