@@ -14,15 +14,21 @@ var ზტაე = '<!DOCTYPE html>'+
                     '</div>'+
                     '<hr/>'+
                     '<div>'+
-                        'სახელი'+
-                        '<input  id="სახელი" />'+
+                        'ენა'+
+                        '<select id="ენა" class="სავსე">'+
+                        '<option value="0" selected>ქართული</option>'+
+                        '</select>'+
                     '</div>'+
                     '<hr/>'+
                     '<div>'+
-                        'ენა'+
-                        '<select id="ენა">'+
-                        '<option value="0" selected>ქართული</option>'+
-                        '</select>'+
+                        'სახელი'+
+                        '<input  id="სახელი" class="სავსე"/>'+
+                    '</div>'+
+                    '<hr/>'+
+                    '<div>'+
+                        'მდებარეობა'+
+                        '<input  id="მდებარეობა_ხ" class="მდებარეობა"/>'+
+                        '<input  id="მდებარეობა_ჯ" class="მდებარეობა"/>'+
                     '</div>'+
                     '<hr/>'+
                     '<div>'+
