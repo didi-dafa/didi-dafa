@@ -66,3 +66,25 @@ function განაახლე_მდებარეობა(){
 }
 
 განაახლე_მდებარეობა()
+
+function შექმენი_ლოგოს_ნაწილი(){
+    var ნაწილი = document.createElement('div')
+    ნაწილი.appendChild(document.createElement('img'))
+    ნაწილი.appendChild(document.createElement('hr'))
+}
+
+function შექმენი_სახარახურე(){
+    function ახალი_დანაყოფი(){
+        var დანაყოფი = document.createElement('div')
+        დანაყოფი
+    }
+    var მთავარი = document.createElement('div')
+    მთავარი.id="სახარახურე"
+    
+    მთავარი.appendChild(შექმენი_ლოგოს_ნაწილი())
+    მთავარი.appendChild(შექმენი_ენის_ნაწილი())
+    მთავარი.appendChild(შექმენი_სახელის_ნაწილი())
+    მთავარი.appendChild(შექმენი_მდებარეობის_ნაწილი())
+    მთავარი.appendChild(შექმენი_მომხმარებლების_ნაწილი())
+    მთავარი.appendChild(შექმენი_ფერების_ნაწილი())
+}
