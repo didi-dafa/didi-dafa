@@ -45,9 +45,13 @@ function განაახლე_თარგმანი(){
                 continue
             }
             
-            ელ.removeChild(ელ.firstChild)
-            ელ.appendChild(document.createTextNode(მომე_თარგმანი(
-                    ელ.attributes['data-თარგმანი'].nodeValue)))
+            var თარგ = მომე_თარგმანი(ელ.attributes['data-თარგმანი'].nodeValue)
+            if(ელ.value){
+                ელ.value=თარგ
+            }else{
+                ელ.removeChild(ელ.firstChild)
+                ელ.appendChild(document.createTextNode(თარგ))
+            }
         }
     })
 }
