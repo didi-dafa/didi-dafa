@@ -55,6 +55,7 @@ var ზტაე = '<!DOCTYPE html>'+
                     '</div>'+
                 '</div>'+
                 '</div>'+
+                '<script type="text/javascript" src="/საცხობი.js"></script>'+
                 '<script type="text/javascript" src="/ფერების-ასარჩევი.js"></script>'+
                 '<script type="text/javascript" src="/გულ-ღვიძლი.js"></script>'+
                 '<script type="text/javascript" src="/სახარახურე.js"></script>'+
