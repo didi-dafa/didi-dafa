@@ -67,24 +67,22 @@ function განაახლე_მდებარეობა(){
 
 განაახლე_მდებარეობა()
 
-function შექმენი_ლოგოს_ნაწილი(){
-    var ნაწილი = document.createElement('div')
-    ნაწილი.appendChild(document.createElement('img'))
-    ნაწილი.appendChild(document.createElement('hr'))
-}
-
-function შექმენი_სახარახურე(){
-    function ახალი_დანაყოფი(){
-        var დანაყოფი = document.createElement('div')
-        დანაყოფი
+var ენა_ელ = document.getElementById('ენა')
+გააგზავნე('/ენების-სია', function(უმი_ენები){
+    var ენები=JSON.parse(უმი_ენები)
+    for(var ე in ენები){
+        var ენ = ენები[ე]
+        
+        var ერთეული = document.createElement('option')
+        ერთეული.appendChild(document.createTextNode(ენ))
+        if(ენ==ენა){
+            ერთეული.selected=true
+        }
+        ენა_ელ.appendChild(ერთეული)
     }
-    var მთავარი = document.createElement('div')
-    მთავარი.id="სახარახურე"
-    
-    მთავარი.appendChild(შექმენი_ლოგოს_ნაწილი())
-    მთავარი.appendChild(შექმენი_ენის_ნაწილი())
-    მთავარი.appendChild(შექმენი_სახელის_ნაწილი())
-    მთავარი.appendChild(შექმენი_მდებარეობის_ნაწილი())
-    მთავარი.appendChild(შექმენი_მომხმარებლების_ნაწილი())
-    მთავარი.appendChild(შექმენი_ფერების_ნაწილი())
+})
+ენა_ელ.onchange=function(მოვლ){
+    console.log('ენის დაყენება',ენა_ელ.value)
+    შეცვალე_ენა(ენა_ელ.value)
+    განაახლე_თარგმანი()
 }
