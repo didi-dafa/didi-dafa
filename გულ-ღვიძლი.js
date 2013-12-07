@@ -29,7 +29,7 @@ function განაახლე_თარგმანი(){
     გააგზავნე('/მომე-თარგმანი?ენა='+ენა, function(თარგ){
         თარგმანი=JSON.parse(თარგ)
         
-        var სათარგმნი = document.querySelectorAll('[data-თარგმანის-გასაღები]')
+        var სათარგმნი = document.querySelectorAll('[data-თარგმანი]')
         for(var ს in სათარგმნი){
             var ელ = სათარგმნი[ს]
             
@@ -39,13 +39,14 @@ function განაახლე_თარგმანი(){
             
             ელ.removeChild(ელ.firstChild)
             ელ.appendChild(document.createTextNode(მომე_თარგმანი(
-                    ელ.attributes['data-თარგმანის-გასაღები'].nodeValue)))
+                    ელ.attributes['data-თარგმანი'].nodeValue)))
         }
     })
 }
 function შეცვალე_ენა(ენ){
     ენა=ენ
     მიე_ნამცხვარი('ენა',ენ)
+    განაახლე_თარგმანი()
 }
 
 განაახლე_თარგმანი()
