@@ -39,7 +39,7 @@ var ზტაე = '<!DOCTYPE html>'+
                     '</div>'+
                     '<hr/>'+
                     '<div>'+
-                        '<span data-თარგმანის-გასაღები="მომხმარებლები">'+
+                        '<span data-თარგმანი="მომხმარებლები">'+
                         'მომხმარებლები'+
                         '</span>'+
                         '<select id="მომხმარებლები" multiple="multiple">'+
@@ -47,12 +47,15 @@ var ზტაე = '<!DOCTYPE html>'+
                     '</div>'+
                     '<hr/>'+
                     '<div>'+
-                        '<span data-თარგმანის-გასაღები="ფერები">'+
+                        '<span data-თარგმანი="ფერები">'+
                         'ფერები'+
                         '</span>'+
+                        '<div id="ფერები">'+
+                        '</div>'+
                     '</div>'+
                 '</div>'+
                 '</div>'+
+                '<script type="text/javascript" src="/ფერების-ასარჩევი.js"></script>'+
                 '<script type="text/javascript" src="/გულ-ღვიძლი.js"></script>'+
                 '<script type="text/javascript" src="/სახარახურე.js"></script>'+
             '</body>'+

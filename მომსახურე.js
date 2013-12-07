@@ -19,6 +19,10 @@ var ფაილები=[{
         შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
         შიგთავსი:ფს.readFileSync('სახარახურე.js'),
     },{
+        რეგამ:/^\/ფერების-ასარჩევი\.js/i,
+        შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
+        შიგთავსი:ფს.readFileSync('ფერების-ასარჩევი.js'),
+    },{
         რეგამ:/^\/სახე\.css/i,
         შიგთავსის_ტიპი:"text/css; charset=utf-8",
         შიგთავსი:ფს.readFileSync('სახე.css'),
