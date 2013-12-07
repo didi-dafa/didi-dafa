@@ -40,6 +40,19 @@
 .სავსე{
     width:100%;
 }
+.ფერის_ყუთი{
+    width:20px;
+    height:20px;
+    position:absolute;
+    border-radius:2px;
+    border:1px solid;
+    border-color:#56a7f1;
+}
+.მონიშნული_ფერის_ყუთი{
+/*    border-color:#e67a22;*/
+    border-color:#ffffff;
+    border:2px solid;
+}
 body{
     overflow:hidden;
 }
