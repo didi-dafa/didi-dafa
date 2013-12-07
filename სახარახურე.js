@@ -85,3 +85,6 @@ var ენა_ელ = document.getElementById('ენა')
     console.log('ენის დაყენება',ენა_ელ.value)
     შეცვალე_ენა(ენა_ელ.value)
 }
+
+var ფერები = document.getElementById('ფერები')
+ჩასვი_ფერების_ასარჩევი(ფერები, არჩეული_ფერი, შეცვალე_ფერი)
