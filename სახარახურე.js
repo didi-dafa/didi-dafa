@@ -84,5 +84,4 @@ var ენა_ელ = document.getElementById('ენა')
 ენა_ელ.onchange=function(მოვლ){
     console.log('ენის დაყენება',ენა_ელ.value)
     შეცვალე_ენა(ენა_ელ.value)
-    განაახლე_თარგმანი()
 }
