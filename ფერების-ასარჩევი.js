@@ -7,8 +7,7 @@ function ჩასვი_ფერების_ასარჩევი(ელ�
             ელ.className+=' მონიშნული_ფერის_ყუთი'
         }
         
-        ელ.onclick=function(მოვლ){
-            console.log(მოვლ, this)
+        ელ.onclick=function(){
             ფერის_ყუთები.forEach(function(ფერის_ყუთი){
                 ფერის_ყუთი.className='ფერის_ყუთი'
             })
