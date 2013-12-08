@@ -15,6 +15,9 @@ var ზტაე = '<!DOCTYPE html>'+
                         '</span>'+
                     '</div>'+
                     '<hr/>'+
+                    '<div id="ფერები">'+
+                    '</div>'+
+                    '<hr/>'+
                     '<div>'+
                         '<span data-თარგმანი="ენა">'+
                         'ენა'+
@@ -44,9 +47,6 @@ var ზტაე = '<!DOCTYPE html>'+
                         '</span>'+
                         '<select id="მომხმარებლები" multiple="multiple">'+
                         '</select>'+
-                    '</div>'+
-                    '<hr/>'+
-                    '<div id="ფერები">'+
                     '</div>'+
                     '<hr/>'+
                     '<div>'+
