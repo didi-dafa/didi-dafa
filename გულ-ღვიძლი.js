@@ -151,7 +151,7 @@ function თქვი_რომ_ფერი_შევიცვალე(){
         })
 }
 var დაფა = function() {
-    var that = {
+    var ეს = {
         კანტი: {ხ: 256, ჯ: 256},
         წანაცვლების_ჯამი: {მარცხ_ხ: 0, მარჯვ_ხ:0, ზედა_ჯ:0, ქვედა_ჯ: 0},
         დაალაგე: function() {
@@ -308,9 +308,9 @@ var დაფა = function() {
                 return
             }
 
-            var that = this
+            var ეს = this
             setTimeout(function() {
-                that.გადაახატე(ნაქნარი, ++ინდექსი)
+                ეს.გადაახატე(ნაქნარი, ++ინდექსი)
             }, ნაფეხური.დრო)
         },
         გააახლეკურსორი: function() {
@@ -340,39 +340,39 @@ var დაფა = function() {
         }
     }
 
-    that.ნახაზი = document.getElementById('დაფა')
-    that.კონტ = that.ნახაზი.getContext('2d')
+    ეს.ნახაზი = document.getElementById('დაფა')
+    ეს.კონტ = ეს.ნახაზი.getContext('2d')
     
     გააგზავნე("/რა-დროა", function(დრო){
         მითხარი_ხოლმე_რაც_მოხდება(+დრო)
     })
 
-    that.ნახაზი.onmousedown = function(მოვლ) {
+    ეს.ნახაზი.onmousedown = function(მოვლ) {
         if (მოვლ.button===0) {
             რაც_მიჭირავს().დაიწყე(მოვლ.clientX, მოვლ.clientY)
         }
     }
-    that.ნახაზი.onmousemove = function(მოვლ) {
+    ეს.ნახაზი.onmousemove = function(მოვლ) {
         if (მოვლ.button===0) {
             რაც_მიჭირავს().გაამოძრავე(მოვლ.clientX, მოვლ.clientY)
         }
     }
-    that.ნახაზი.onmouseup = function(მოვლ) {
+    ეს.ნახაზი.onmouseup = function(მოვლ) {
         if (მოვლ.button===0) {
             რაც_მიჭირავს().დაასრულე(მოვლ.clientX, მოვლ.clientY)
         }
     }
-    that.ნახაზი.oncontextmenu = function() {
+    ეს.ნახაზი.oncontextmenu = function() {
         if(საც.მიჭირავს == 'ხელი'){
             საც.მიე_მიჭირავს('ფუნჯი')
         }else{
             საც.მიე_მიჭირავს('ხელი')
         }
-        that.გააახლეკურსორი();
+        ეს.გააახლეკურსორი();
         return false
     }
 
-    return that
+    return ეს
 }()
 
 var ფუნჯი = {
