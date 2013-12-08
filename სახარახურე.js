@@ -44,6 +44,7 @@ function განაახლე_მომხმარებლების_ს
             მომხ_უჯრა = document.createElement('div'),
             სახელის_უჯრა = document.createElement('div'),
             ფერის_უჯრა = document.createElement('div'),
+            ფანქრის_უჯრა = document.createElement('div'),
             სახელი = მომხმარებელი.სახელი?მომხმარებელი.სახელი:'უსახელო'
         
         მომხ_უჯრა.className='მომხმარებელი'
@@ -60,15 +61,33 @@ function განაახლე_მომხმარებლების_ს
         
         ფერის_უჯრა.className='მომხმარებლის_ფერი'
         ფერის_უჯრა.style.backgroundColor=მომხმარებელი.ფერი
+        
+        if(მომხმარებელი.ხატავს){
+            ფანქრის_უჯრა.className='მომხმარებლის_ფანქარი'
+        }else{
+            ფანქრის_უჯრა.className='მომხმარებლის_ფანქარი დამალული'
+        }
+        ფანქრის_უჯრა.appendChild(document.createTextNode('✎'))
     
         სახელის_უჯრა.className='მომხმარებლის_სახელი'
         სახელის_უჯრა.appendChild(document.createTextNode(სახელი))
         
         მომხ_უჯრა.appendChild(ფერის_უჯრა)
+        მომხ_უჯრა.appendChild(ფანქრის_უჯრა)
         მომხ_უჯრა.appendChild(სახელის_უჯრა)
         მომხმარებლები_ელ.appendChild(მომხ_უჯრა)
     }
 }
+
+setInterval(function(){
+    for(var მ in მომხმარებლები){
+        var მომხმარებელი = მომხმარებლები[მ]
+        if(მომხმარებელი.ბოლო_ნახატის_დრო+5000<new Date().getTime()){
+            მომხმარებელი.ხატავს=false
+        }
+    }
+    განაახლე_მომხმარებლების_სია()
+}, 2000)
 
 გააგზავნე('/სად-არიან', function(უმი_ხალხი){
     var ხალხი=JSON.parse(უმი_ხალხი)
