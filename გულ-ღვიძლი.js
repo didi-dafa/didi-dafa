@@ -4,6 +4,14 @@ window.onresize = function() {
 
 var საც=new საცხობი()
 
+function რაც_მიჭირავს(){
+    console.log(საც.მიჭირავს)
+    if(საც.მიჭირავს=='ხელი'){
+        return ხელი
+    }
+    return ფუნჯი
+}
+
 var თარგმანი={}
 function მომე_თარგმანი(გასაღები, ალტერნატივა){
     if(თარგმანი[გასაღები]){
@@ -71,7 +79,6 @@ function დაამუშავე_მოსული_ნაქნარებ
         var ნაქნარი = ნაქნარები[ნ]
         console.log(ნაქნარი.ტიპი)
         if(ნაქნარი.ტიპი=='დავხატე'){
-                console.log(ნაქნარი.მონაცემები)
             if(ნაქნარი.მონაცემები){
                 დაფა.გადაახატე(ნაქნარი.მონაცემები)
             }
@@ -146,7 +153,6 @@ var დაფა = function() {
         დაალაგე: function() {
             this.ნახაზი.width = window.innerWidth + this.კანტი.ხ * 2
             this.ნახაზი.height = window.innerHeight + this.კანტი.ჯ * 2
-            console.log(this.ნახაზი.width, this.ნახაზი.height)
             this.მთლიანად_გადახატე()
             this.გააახლეკურსორი()
         },
@@ -304,7 +310,8 @@ var დაფა = function() {
             }, ნაფეხური.დრო)
         },
         გააახლეკურსორი: function() {
-            if (მიჭირავს === ხელი) {
+            console.log(საც.მიჭირავს)
+            if (საც.მიჭირავს === 'ხელი') {
                 დაფა.ნახაზი.style.cursor = 'pointer'
             } else {
                 დაფა.ნახაზი.style.cursor = 'auto'
@@ -338,22 +345,26 @@ var დაფა = function() {
     })
 
     that.ნახაზი.onmousedown = function(მოვლ) {
-        if (მიჭირავს && მოვლ.button===0) {
-            მიჭირავს.დაიწყე(მოვლ.clientX, მოვლ.clientY)
+        if (მოვლ.button===0) {
+            რაც_მიჭირავს().დაიწყე(მოვლ.clientX, მოვლ.clientY)
         }
     }
     that.ნახაზი.onmousemove = function(მოვლ) {
-        if (მიჭირავს && მოვლ.button===0) {
-            მიჭირავს.გაამოძრავე(მოვლ.clientX, მოვლ.clientY)
+        if (მოვლ.button===0) {
+            რაც_მიჭირავს().გაამოძრავე(მოვლ.clientX, მოვლ.clientY)
         }
     }
     that.ნახაზი.onmouseup = function(მოვლ) {
-        if (მიჭირავს && მოვლ.button===0) {
-            მიჭირავს.დაასრულე(მოვლ.clientX, მოვლ.clientY)
+        if (მოვლ.button===0) {
+            რაც_მიჭირავს().დაასრულე(მოვლ.clientX, მოვლ.clientY)
         }
     }
     that.ნახაზი.oncontextmenu = function() {
-        მიჭირავს = მიჭირავს == ხელი ? ფუნჯი : ხელი
+        if(საც.მიჭირავს == 'ხელი'){
+            საც.მიე_მიჭირავს('ფუნჯი')
+        }else{
+            საც.მიე_მიჭირავს('ხელი')
+        }
         that.გააახლეკურსორი();
         return false
     }
@@ -439,7 +450,6 @@ var ხელი = {
         საც.შეინახე_მდებარეობა()
     },
 }
-var მიჭირავს = ხელი
 
 დაფა.დაალაგე()
 თქვი_რომ_წავნაცვლდი()
