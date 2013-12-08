@@ -17,13 +17,27 @@ function განაახლე_მომხმარებლების_ს
     }
     for(var მ in მომხმარებლები){
         var მომხმარებელი = მომხმარებლები[მ],
-            ჩასამატებელი = document.createElement('option'),
+            მომხ_უჯრა = document.createElement('div'),
+            სახელის_უჯრა = document.createElement('div'),
+            ფერის_უჯრა = document.createElement('div'),
             სახელი = მომხმარებელი.სახელი?მომხმარებელი.სახელი:'უსახელო'
         
-        ჩასამატებელი.appendChild(document.createTextNode(სახელი))
-        ჩასამატებელი.value=მომხმარებელი.რიგის_ნომერი
+        მომხ_უჯრა.className='მომხმარებელი'
+        მომხ_უჯრა['data-რიგის-ნომერი']=მომხმარებელი.რიგის_ნომერი
+        მომხ_უჯრა.onclick=function(მოვლ){
+            console.log(this['data-რიგის-ნომერი'])
+        }
         
-        მომხმარებლები_ელ.appendChild(ჩასამატებელი)
+        ფერის_უჯრა.className='მომხმარებლის_ფერი'
+        ფერის_უჯრა.style.backgroundColor=მომხმარებელი.ფერი
+    
+        console.log(მომხმარებელი.ფერი)
+        სახელის_უჯრა.className='მომხმარებლის_სახელი'
+        სახელის_უჯრა.appendChild(document.createTextNode(სახელი))
+        
+        მომხ_უჯრა.appendChild(ფერის_უჯრა)
+        მომხ_უჯრა.appendChild(სახელის_უჯრა)
+        მომხმარებლები_ელ.appendChild(მომხ_უჯრა)
     }
 }
 

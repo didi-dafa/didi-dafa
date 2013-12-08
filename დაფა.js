@@ -41,12 +41,7 @@ var ზტაე = '<!DOCTYPE html>'+
                         '<input  id="მდებარეობა_ჯ" class="სავსე"/>'+
                     '</div>'+
                     '<hr/>'+
-                    '<div>'+
-                        '<span data-თარგმანი="მომხმარებლები">'+
-                        'მომხმარებლები'+
-                        '</span>'+
-                        '<select id="მომხმარებლები" multiple="multiple">'+
-                        '</select>'+
+                    '<div id="მომხმარებლები">'+
                     '</div>'+
                     '<hr/>'+
                     '<div>'+

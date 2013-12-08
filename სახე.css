@@ -36,6 +36,26 @@
 #მომხმარებლები{
     width:100%;
     height:200px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.მომხმარებელი{
+    width:100%;
+    clear:both;
+    cursor:pointer;
+}
+.მომხმარებლის_ფერი{
+    float:left;
+    width:5px;
+    height:25px;
+    padding-left:5px;
+}
+.მომხმარებლის_სახელი{
+    text-align: left;
+    padding-left:5px;
+    float:left;
 }
 .სავსე{
     width:100%;
@@ -43,14 +63,12 @@
 .ფერის_ყუთი{
     width:20px;
     height:20px;
-    /*position:absolute;*/
     border-radius:2px;
     border:1px solid #56a7f1;
     float:left;
     margin-left:2px;
 }
 .მონიშნული_ფერის_ყუთი{
-/*    border-color:#e67a22;*/
     border:2px solid #eeeeff;
     width:18px;
     height:18px;
