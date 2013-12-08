@@ -19,7 +19,7 @@
     top:0;
     right:0;
     width:170px;
-    height:650px;
+    height:555px;
     background-color: rgba(103, 172, 240, 0.5);
     border-bottom-left-radius: 8px;
     padding: 10px;
@@ -32,6 +32,10 @@
 }
 #ენა{
     width:100%;
+}
+#ფერები{
+    margin-top:5px;
+    height: 30px;
 }
 #მომხმარებლები{
     width:100%;
