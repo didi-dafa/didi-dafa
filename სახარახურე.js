@@ -153,3 +153,28 @@ var ფერები = document.getElementById('ფერები')
     საც.მიე_ფერი(ფერი)
     თქვი_რომ_ფერი_შევიცვალე()
 })
+
+var სახარახურე={
+    ელემენტი:document.getElementById('სახარახურე'),
+    გამოშლილია:false,
+    გამოშალე:function(){
+        this.ელემენტი.className="სახარახურე გამოშლილი_სახარახურე"
+        this.გამოშლილია=true
+    },
+    შეკეცე:function(){
+        this.ელემენტი.className="სახარახურე"
+        this.გამოშლილია=false
+    }
+}
+var სხვა_დანარჩენი = document.getElementById('სხვა_დანარჩენი'),
+    სხვა_დანარჩენი_შიგთავსი = document.getElementById('სხვა_დანარჩენი_შიგთავსი')
+
+სხვა_დანარჩენი.onclick=function(){
+    if(სახარახურე.გამოშლილია){
+        სახარახურე.შეკეცე()
+        სხვა_დანარჩენი_შიგთავსი.style.visibility='hidden'
+    }else{
+        სახარახურე.გამოშალე()
+        სხვა_დანარჩენი_შიგთავსი.style.visibility='visible'
+    }
+}

@@ -27,6 +27,10 @@ var ფაილები=[{
         შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
         შიგთავსი:ფს.readFileSync('საცხობი.js'),
     },{
+        რეგამ:/^\/სხვა-დანარჩენი\.js/i,
+        შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
+        შიგთავსი:ფს.readFileSync('სხვა-დანარჩენი.js'),
+    },{
         რეგამ:/^\/სახე\.css/i,
         შიგთავსის_ტიპი:"text/css; charset=utf-8",
         შიგთავსი:ფს.readFileSync('სახე.css'),
