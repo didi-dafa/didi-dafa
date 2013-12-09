@@ -14,18 +14,38 @@
     left:0;
     right:0;
 }
-#სახარახურე{
+.სახარახურე{
     position: absolute;
     top:0;
     right:0;
     width:170px;
-    height:555px;
+    height:600px;
     background-color: rgba(103, 172, 240, 0.5);
     border-bottom-left-radius: 8px;
     padding: 10px;
     text-align: center;
     line-height: 25px;
     /*103 172 240 #58a9f3*/
+}
+#სახარახურე_შიგთავსი{
+    position: absolute;
+    top:0;
+    right:0;
+    width:170px;
+    padding: 10px;
+    /*103 172 240 #58a9f3*/
+}
+.გამოშლილი_სახარახურე{
+    width:800px;
+}
+#სხვა_დანარჩენი_შიგთავსი{
+    position:absolute;
+    left:0;
+    right:190px;
+    top:0;
+    bottom:0;
+    margin:10px;
+    overflow-y:scroll;
 }
 #სახელი{
     width:100%;
@@ -36,6 +56,22 @@
 #ფერები{
     margin-top:5px;
     height: 30px;
+}
+#რუკა{
+    height:30px;
+}
+#სხვა_დანარჩენი{
+    height:30px;
+}
+#სხვა_დანარჩენი_საფარი{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+}
+#სხვა_დანარჩენი_შიგთავსი{
+    
 }
 #მომხმარებლები{
     width:100%;
@@ -92,4 +128,8 @@
 }
 body{
     overflow:hidden;
+}
+input{ 
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
 }
