@@ -50,26 +50,29 @@
     clear:both;
     cursor:pointer;
     font-size:12px;
+    height:25px;
+    position:relative;
 }
 .მომხმარებლის_ფერი{
-    float:left;
+    position:absolute;
     width:5px;
     height:25px;
-    padding-left:5px;
 }
 .მომხმარებლის_ფანქარი{
-    float:left;
+    position:absolute;
+    left:5px;
     width:14px;
     height:25px;
-    padding-left:5px;
+}
+.მომხმარებლის_სახელი{
+    position:absolute;
+    left:19px;
+    text-align: left;
+    height:25px;
+    white-space:nowrap;
 }
 .დამალული{
     visibility:hidden;
-}
-.მომხმარებლის_სახელი{
-    text-align: left;
-    padding-left:5px;
-    float:left;
 }
 .სავსე{
     width:100%;
