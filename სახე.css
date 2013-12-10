@@ -136,6 +136,7 @@ input{
     padding:0;
     margin:0;
     border:1px solid #aeaeae;
+    padding:2px;
 }
 input[type=submit]{
     border-radius:2px;
