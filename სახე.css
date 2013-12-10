@@ -19,7 +19,7 @@
     top:0;
     right:0;
     width:170px;
-    height:600px;
+    height:570px;
     background-color: rgba(103, 172, 240, 0.5);
     border-bottom-left-radius: 8px;
     padding: 10px;
@@ -132,4 +132,11 @@ body{
 input{ 
     -moz-box-sizing:border-box;
     box-sizing:border-box;
+    border:0;
+    padding:0;
+    margin:0;
+    border:1px solid #aeaeae;
+}
+input[type=submit]{
+    border-radius:2px;
 }
