@@ -14,7 +14,7 @@ var ზტაე = '<!DOCTYPE html>'+
                 '</div>'+
                 '<div id="სახარახურე_შიგთავსი">'+
                     '<div>'+
-                        '<img alt="ლოგო" /><br/>'+
+                        '<img alt="ლოგო" src="/სურათები/ლოგო.png"><br/>'+
                         '<h2>'+
                         '<span data-თარგმანი="დიდი დაფა">'+
                         'დიდი დაფა'+
@@ -23,13 +23,9 @@ var ზტაე = '<!DOCTYPE html>'+
                     '</div>'+
                     '<hr/>'+
                     '<div>'+
-                        '<span data-თარგმანი="ენა">'+
-                        'ენა'+
-                        '</span>'+
                         '<select id="ენა">'+
                         '</select>'+
                     '</div>'+
-                    '<hr/>'+
                     '<div>'+
                         '<input  id="სახელი"/>'+
                     '</div>'+
@@ -47,7 +43,6 @@ var ზტაე = '<!DOCTYPE html>'+
                     '</div>'+
                     '<hr/>'+
                     '<div>'+
-                        '<input id="რუკა" type="submit" data-თარგმანი="რუკა" value="რუკა" class="სავსე"/>'+
                         '<input id="სხვა_დანარჩენი" type="submit" data-თარგმანი="სხვა დანარჩენი" value="სხვა დანარჩენი" class="სავსე"/>'+
                     '</div>'+
                 '</div>'+
