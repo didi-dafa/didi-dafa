@@ -48,3 +48,14 @@ exports.გაფილტრე = function(მომხმარებელი
     }
     return ნაქნარი
 }
+
+setInterval(function(){
+    var ახლა = new Date().getTime()
+    for(var ნ in ნაქნარები){
+        var ნაქნარი = ნაქნარები[ნ]
+        
+        if(ნაქნარი.დრო+1000*60*15<ახლა){
+            delete ნაქნარები[ნ]
+        }
+    }
+}, 5000)
