@@ -244,6 +244,10 @@ var დაფა = function() {
             
             this.კონტ.drawImage(this.ალტ_ნახაზი,0,0, this.ნახაზი.width, this.ნახაზი.height)
 
+            // გვერდების გასუფთავება
+            this.ალტ_კონტ.fillStyle='#ffffff'
+            this.ალტ_კონტ.fillRect(0,0,this.ნახაზი.width, this.ნახაზი.height)
+            
             this.გამოთვალე_კოორდინატები()
 
             // ცარიელი გვერდების შევსება
