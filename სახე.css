@@ -19,7 +19,7 @@
     top:0;
     right:0;
     width:170px;
-    height:618px;
+    height:654px;
     background-color: rgba(103, 172, 240, 0.5);
     border-bottom-left-radius: 8px;
     padding: 10px;
@@ -133,6 +133,9 @@
     line-height:14px;
     height:30px;
 }
+.სათაური{
+    font-weight:bold;
+}
 body{
     overflow:hidden;
     font-family:sans-serif;
@@ -151,6 +154,8 @@ input{
 input[type=submit]{
     border-radius:2px;
     background-color:#f0f0f0;
+    margin-bottom:5px;
+    height:30px;
 }
 input[type=text]{
     margin-top:5px;
