@@ -4,7 +4,6 @@
     left:-512px;
     right:-512px;
     bottom:-512px;
-    border:solid 1px;
 }
 #მთავარი_ნაჭერი{
     position: absolute;
@@ -18,17 +17,17 @@
     position: absolute;
     top:0;
     right:0;
-    width:170px;
-    height:654px;
+    /*width:170px;*/
+    /*height:654px;*/
     background-color: rgba(103, 172, 240, 0.5);
     border-bottom-left-radius: 8px;
-    padding: 10px;
+    /*padding: 10px;*/
     text-align: center;
     line-height: 20px;
     /*103 172 240 #58a9f3*/
 }
 #სახარახურე_შიგთავსი{
-    position: absolute;
+    position: relative;
     top:0;
     right:0;
     width:170px;
@@ -38,6 +37,9 @@
 }
 .გამოშლილი_სახარახურე{
     width:800px;
+}
+.გამოშლილი_სახარახურე_შიგთავსი{
+    left:610px;
 }
 #სხვა_დანარჩენი_შიგთავსი{
     position:absolute;
@@ -71,8 +73,8 @@
     top:0;
     bottom:0;
 }
-#სხვა_დანარჩენი_შიგთავსი{
-    
+#უკუკავშირი{
+    margin-bottom:5px;
 }
 #მომხმარებლები{
     width:100%;
@@ -154,7 +156,6 @@ input{
 input[type=submit]{
     border-radius:2px;
     background-color:#f0f0f0;
-    margin-bottom:5px;
     height:30px;
 }
 input[type=text]{

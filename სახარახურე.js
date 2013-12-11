@@ -162,13 +162,16 @@ var ფერები = document.getElementById('ფერები')
 
 var სახარახურე={
     ელემენტი:document.getElementById('სახარახურე'),
+    შიგთავსი:document.getElementById('სახარახურე_შიგთავსი'),
     გამოშლილია:false,
     გამოშალე:function(){
         this.ელემენტი.className="სახარახურე გამოშლილი_სახარახურე"
+        this.შიგთავსი.className="გამოშლილი_სახარახურე_შიგთავსი"
         this.გამოშლილია=true
     },
     შეკეცე:function(){
         this.ელემენტი.className="სახარახურე"
+        this.შიგთავსი.className=""
         this.გამოშლილია=false
     }
 }
