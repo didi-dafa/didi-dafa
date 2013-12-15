@@ -147,20 +147,6 @@ function გააგზავნე(მისამართზე, უკუ�
     მოთხოვნა.send()
 }
 
-function მომე_ნამცხვარი(სახელი){
-    var ნამცხვრები = document.cookie.match(
-            encodeURIComponent(სახელი)+"=(.*?)(;|$)")
-    if(!ნამცხვრები){
-        return 
-    }
-    return decodeURIComponent(ნამცხვრები[1])
-}
-
-function მიე_ნამცხვარი(სახელი, მნიშვნელობა){
-    document.cookie=encodeURIComponent(სახელი)+'='+
-            encodeURIComponent(მნიშვნელობა)
-}
-
 function თქვი_რომ_წავნაცვლდი() {
     გააგზავნე_ობიექტი('/ვქენი', {
             ტიპი:'წავნაცვლდი',
