@@ -48,7 +48,7 @@
     top:0;
     bottom:0;
     margin:10px;
-    overflow-y:scroll;
+    overflow-y:auto;
 }
 #სახელი{
     width:100%;
