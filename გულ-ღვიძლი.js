@@ -426,21 +426,27 @@ var დაფა = function() {
         მითხარი_ხოლმე_რაც_მოხდება()
     })
 
-    ეს.ნახაზი.onmousedown = function(მოვლ) {
+    ეს.ნახაზი.addEventListener('mousedown', function(მოვლ){
         if (მოვლ.button===0) {
             რაც_მიჭირავს().დაიწყე(მოვლ.clientX, მოვლ.clientY)
         }
-    }
-    ეს.ნახაზი.onmousemove = function(მოვლ) {
+    })
+    ეს.ნახაზი.addEventListener('mousemove', function(მოვლ){
         if (მოვლ.button===0) {
             რაც_მიჭირავს().გაამოძრავე(მოვლ.clientX, მოვლ.clientY)
         }
-    }
-    ეს.ნახაზი.onmouseup = function(მოვლ) {
+    })
+    ეს.ნახაზი.addEventListener('mouseup', function(მოვლ){
         if (მოვლ.button===0) {
             რაც_მიჭირავს().დაასრულე(მოვლ.clientX, მოვლ.clientY)
         }
-    }
+    })
+    ეს.ნახაზი.addEventListener('mouseleave', function(მოვლ){
+        if (მოვლ.button===0) {
+            რაც_მიჭირავს().დაასრულე(მოვლ.clientX, მოვლ.clientY)
+        }
+    })
+    
     ეს.ნახაზი.oncontextmenu = function() {
         if(საც.მიჭირავს == 'ხელი'){
             საც.მიე_მიჭირავს('ფუნჯი')
