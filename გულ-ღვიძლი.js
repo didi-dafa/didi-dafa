@@ -2,7 +2,9 @@ window.onresize = function() {
     დაფა.დაალაგე()
 }
 
-var საც=new საცხობი()
+var საც=new საცხობი(),
+    დაკავშირებული=true,
+    ბოლო_ნაქნარის_დრო
 
 function რაც_მიჭირავს(){
     if(საც.მიჭირავს=='ხელი'){
@@ -51,27 +53,53 @@ function შეცვალე_ენა(ენა){
 განაახლე_თარგმანი()
 
 
-function მითხარი_ხოლმე_რაც_მოხდება(ბოლო_ნაქნარის_დრო) {
+function მითხარი_ხოლმე_რაც_მოხდება() {
     var მოთხოვნა = new XMLHttpRequest()
 
     function ახალი_მოთხოვნა() {
         მოთხოვნა.onreadystatechange = function() {
             if (მოთხოვნა.readyState == 4) {
                 if (მოთხოვნა.status == 200) {
-//                    if(მოთხოვნა.response=='გამოცოცხლდი'){
-//                        ახალი_მოთხოვნა()
-//                        return
-//                    }
+                    if(!მოთხოვნა.response){
+                        სცადე_მოგვიანებით()
+                        return
+                    }
+                    if(მოთხოვნა.response=='გამოცოცხლდი'){
+                        ახალი_მოთხოვნა()
+                        return
+                    }
                     var ნაქნარები = JSON.parse(მოთხოვნა.response)
                     ბოლო_ნაქნარის_დრო = ნაქნარები[ნაქნარები.length - 1].დრო
                     ახალი_მოთხოვნა()
                     
                     დაამუშავე_მოსული_ნაქნარები(ნაქნარები)
+                }else{
+                    სცადე_მოგვიანებით()
                 }
             }
+            
+            
         }
         მოთხოვნა.open("GET", '/რა-მოხდა?როდიდან=' + ბოლო_ნაქნარის_დრო, true)
+        მოთხოვნა.setRequestHeader("Cache-Control","no-cache")
+        მოთხოვნა.setRequestHeader("Pragma","no-cache")
         მოთხოვნა.send()
+        
+        function სცადე_მოგვიანებით(){
+            console.log('ვცდით მოგვიანებით')
+            დაკავშირებული=false
+            setTimeout(function(){
+                გააგზავნე('/ცდა', function(პას, შეც){
+                    if(შეც){
+                        სცადე_მოგვიანებით()
+                    }else{
+                        console.log('დაუკავშირდა')
+                        დაკავშირებული=true
+                        მითხარი_ხოლმე_რაც_მოხდება()
+                    }
+                })
+            }, 2000)
+        }
     }
 
     ახალი_მოთხოვნა()
@@ -131,6 +159,8 @@ function დაამუშავე_მოსული_ნაქნარებ
 function გააგზავნე_ობიექტი(მისამართზე, ობიექტი) {
     var მოთხოვნა = new XMLHttpRequest()
     მოთხოვნა.open("POST", მისამართზე, true)
+    მოთხოვნა.setRequestHeader("Cache-Control","no-cache")
+    მოთხოვნა.setRequestHeader("Pragma","no-cache")
     მოთხოვნა.send(JSON.stringify(ობიექტი))
 }
 
@@ -138,12 +168,19 @@ function გააგზავნე(მისამართზე, უკუ�
     var მოთხოვნა = new XMLHttpRequest()
     if (უკუძახილი) {
         მოთხოვნა.onreadystatechange = function() {
-            if (მოთხოვნა.readyState == 4 && მოთხოვნა.status == 200) {
-                უკუძახილი(მოთხოვნა.response)
+            if (მოთხოვნა.readyState == 4){
+                console.log(მოთხოვნა.status)
+                if(მოთხოვნა.status == 200) {
+                    უკუძახილი(მოთხოვნა.response)
+                }else{
+                    უკუძახილი(null, true)
+                }
             }
         }
     }
     მოთხოვნა.open("GET", მისამართზე, true)
+    მოთხოვნა.setRequestHeader("Cache-Control","no-cache")
+    მოთხოვნა.setRequestHeader("Pragma","no-cache")
     მოთხოვნა.send()
 }
 
@@ -385,7 +422,8 @@ var დაფა = function() {
     ეს.ალტ_კონტ = ეს.ალტ_ნახაზი.getContext('2d')
     
     გააგზავნე("/რა-დროა", function(დრო){
-        მითხარი_ხოლმე_რაც_მოხდება(+დრო)
+        ბოლო_ნაქნარის_დრო=დრო
+        მითხარი_ხოლმე_რაც_მოხდება()
     })
 
     ეს.ნახაზი.onmousedown = function(მოვლ) {

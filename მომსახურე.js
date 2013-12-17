@@ -73,6 +73,11 @@ var ფაილები=[{
     }]
 
 ზტგპ.createServer(function(მოთხ, პასუხ){
+    if(decodeURIComponent(მოთხ.url)=='/ცდა'){
+        პასუხ.setHeader("Cache-Control", "max-age=0")
+        პასუხ.end("ცოცხალი ვარ")
+    }
+    
     მოთხ.პარამები=კითხვის_სიმი.parse(ურლ.parse(მოთხ.url).query)
     for(var ფ in ფაილები){
         if(decodeURIComponent(მოთხ.url).match(ფაილები[ფ].რეგამ)){
@@ -90,6 +95,8 @@ var ფაილები=[{
                     return
                 }
                 მომხმარებელი.აქტივობა()
+                
+                პასუხ.setHeader("Cache-Control", "max-age=0")
                 ფაილი.დინამიური_შიგთავსი(მოთხ, პასუხ, მომხმარებელი, მოდულები)
             }
             return
