@@ -95,11 +95,9 @@ function მითხარი_ხოლმე_რაც_მოხდება()
             
             setTimeout(function(){
                 გააგზავნე('/ცდა', function(პას, შეც){
-                    console.log('შეც', შეც)
                     if(შეც){
                         სცადე_მოგვიანებით()
                     }else{
-                        console.log('დაუკავშირდა')
                         დაკავშირებული=true
                         გააგზავნე('/', function(){
                             // კავშირი აღდგა. ყველაფერი გასაახლებელია.
@@ -188,7 +186,6 @@ function გააგზავნე(მისამართზე, უკუ�
     if (უკუძახილი) {
         მოთხოვნა.onreadystatechange = function() {
             if (მოთხოვნა.readyState == 4){
-                console.log(მოთხოვნა.status)
                 if(მოთხოვნა.status == 200) {
                     უკუძახილი(მოთხოვნა.response)
                 }else{
