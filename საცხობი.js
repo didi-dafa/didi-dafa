@@ -60,7 +60,6 @@ function მიე_ნამცხვარი(სახელი, მნიშ�
     if(ვადა){
         მისაცემი+=';expires='+new Date(ვადა).toUTCString()
     }
-    console.log(მისაცემი)
     document.cookie=მისაცემი
 }
 
