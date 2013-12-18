@@ -68,7 +68,6 @@ function განაახლე_მომხმარებლების_ს
         }else{
             სტატუსის_უჯრა.className='მომხმარებლის_სტატუსი დამალული'
         }
-        console.log(მომხმარებელი.ხატავს,მომხმარებელი.დადის)
         if(მომხმარებელი.ხატავს){
             სტატუსის_უჯრა.appendChild(document.createTextNode('✎'))
         }else if(მომხმარებელი.დადის){
@@ -161,7 +160,6 @@ var ენა_ელ = document.getElementById('ენა')
     }
 })
 ენა_ელ.onchange=function(მოვლ){
-    console.log('ენის დაყენება',ენა_ელ.value)
     შეცვალე_ენა(ენა_ელ.value)
 }
 
