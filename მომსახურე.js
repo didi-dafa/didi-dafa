@@ -2,7 +2,7 @@ var
     ზტგპ=require('http'),
     ფს=require('fs'),
     კითხვის_სიმი=require('querystring'),
-    ურლ=require('url'),
+    ერლ=require('url'),
     მოდულები=function(){
        var ეს = {
             ნაქნარები:require('./ნაქნარები'),
@@ -75,10 +75,11 @@ var ფაილები=[{
 ზტგპ.createServer(function(მოთხ, პასუხ){
     if(decodeURIComponent(მოთხ.url)=='/ცდა'){
         პასუხ.setHeader("Cache-Control", "max-age=0")
+        პასუხ.setHeader("Content-Type", "text/plain; charset=utf-8")
         პასუხ.end("ცოცხალი ვარ")
     }
     
-    მოთხ.პარამები=კითხვის_სიმი.parse(ურლ.parse(მოთხ.url).query)
+    მოთხ.პარამები=კითხვის_სიმი.parse(ერლ.parse(მოთხ.url).query)
     for(var ფ in ფაილები){
         if(decodeURIComponent(მოთხ.url).match(ფაილები[ფ].რეგამ)){
             var ფაილი = ფაილები[ფ]
