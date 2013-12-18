@@ -17,11 +17,8 @@
     position: absolute;
     top:0;
     right:0;
-    /*width:170px;*/
-    /*height:654px;*/
     background-color: rgba(103, 172, 240, 0.5);
     border-bottom-left-radius: 8px;
-    /*padding: 10px;*/
     text-align: center;
     line-height: 20px;
     /*103 172 240 #58a9f3*/
@@ -110,6 +107,15 @@
     text-align: left;
     height:25px;
     white-space:nowrap;
+}
+#ლაბი{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(50, 50, 50, 0.5);
+    z-index:100;
 }
 .დამალული{
     visibility:hidden;
