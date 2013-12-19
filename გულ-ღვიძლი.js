@@ -445,17 +445,35 @@ var დაფა = function() {
             წინები.წინა2=წინები.წინა1
             წინები.წინა1={ხ:ხ, ჯ:ჯ, ფერი:ფერი, სისქე:სისქე}
             
-            if(!მართლა_წინა2){
-                return წინები
-            }
+            
+            this.კონტ.save()
             this.კონტ.strokeStyle=ფერი
             this.კონტ.lineWidth=სისქე
+            this.კონტ.globalAlpha=0.7
             this.კონტ.beginPath()
-            this.კონტ.moveTo(მართლა_წინა2.ხ, მართლა_წინა2.ჯ)
-            this.კონტ.lineTo(მართლა_წინა1.ხ, მართლა_წინა1.ჯ)
-            this.კონტ.lineTo(ხ, ჯ)
+            if(მართლა_წინა2){
+                this.კონტ.moveTo(მართლა_წინა2.ხ, მართლა_წინა2.ჯ)
+                this.კონტ.lineTo(მართლა_წინა1.ხ, მართლა_წინა1.ჯ)
+                this.კონტ.lineTo(ხ, ჯ)
+            }else{
+                this.კონტ.moveTo(მართლა_წინა1.ხ, მართლა_წინა1.ჯ)
+                this.კონტ.lineTo(ხ, ჯ)
+            }
             this.კონტ.stroke()
+            this.კონტ.restore()
+
             return წინები
+        },
+        მორჩი_ხაზვას:function(ფერი, სისქე, წინები){
+            this.კონტ.save()
+            this.კონტ.strokeStyle=ფერი
+            this.კონტ.lineWidth=სისქე
+            this.კონტ.globalAlpha=0.7
+            this.კონტ.beginPath()
+            this.კონტ.moveTo(წინები.წინა2.ხ, წინები.წინა2.ჯ)
+            this.კონტ.lineTo(წინები.წინა1.ხ, წინები.წინა1.ჯ)
+            this.კონტ.stroke()
+            this.კონტ.restore()
         },
     }
 
@@ -510,6 +528,7 @@ var დაფა = function() {
 var ფუნჯი = {
     იხატება: false,
     გზას_მიუმატე: function(ხ, ჯ) {
+        console.log(ხ,ჯ)
         var გლობ = დაფა.მომე_გლობალური_კოორდინატები_ეკრანიდან(ხ, ჯ)
         this.გზა.push({ხ: გლობ.ხ, ჯ: გლობ.ჯ, 
             დრო: new Date().getTime()})
@@ -533,7 +552,7 @@ var ფუნჯი = {
     დაასრულე: function(ხ, ჯ) {
         this.იხატება = false
         
-        this.გზას_მიუმატე(ხ, ჯ)
+        დაფა.მორჩი_ხაზვას(საც.ფერი, საც.სისქე, this.წინები)
 
         var გასაგზავნი_გზა = []
         for (var ი = 0; ი < this.გზა.length - 1; ი++) {
