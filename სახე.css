@@ -47,9 +47,6 @@
     margin:10px;
     overflow-y:auto;
 }
-#სახელი{
-    width:100%;
-}
 #ენა{
     width:100%;
 }
@@ -144,6 +141,16 @@
 .სათაური{
     font-weight:bold;
 }
+.დასახელება{
+    float:left;
+    width:30%;
+    font-size:12px;
+    text-align:left;
+}
+.მნიშვნელობა{
+    float:left;
+    width:70%;
+}
 body{
     overflow:hidden;
     font-family:sans-serif;
@@ -165,8 +172,8 @@ input[type=submit]{
     height:30px;
 }
 input[type=text]{
-    margin-top:5px;
     height:20px;
+    width:100%;
 }
 select{
     height:20px;
