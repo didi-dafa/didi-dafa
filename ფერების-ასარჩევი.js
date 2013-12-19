@@ -1,3 +1,27 @@
+var საფერე = function(ელემენტი, საწყისი_ფერი, უკუძახილი){
+    var ნახაზი = document.createElement('canvas')
+          
+    ნახაზი.width = 200
+    ნახაზი.height = 100
+    
+    var კონტ = ნახაზი.getContext('2d'),
+        სურათი = კონტ.createImageData(ნახაზი.width, ნახაზი.height)
+    
+//    for(var ი=0;ი<ნახაზი.width;ი++){
+//        for(var კ=0;კ<ნახაზი.height;კ++){
+//            var მის = კ*ნახაზი.width*4 + ი*4
+//            სურათი.data[მის]=255;
+////            სურათი.data[მის+1]=255;
+////            სურათი.data[მის+2]=255;
+//        }
+//    }
+    
+//    კონტ.putImageData(სურათი.data, 0,0);
+    
+    ელემენტი.appendChild(ნახაზი)
+    
+    return {}
+}
 function ჩასვი_ფერების_ასარჩევი(ელემენტი, საწყისი_ფერი, უკუძახილი){
     function ფერის_ნაწყვეტი(ფერი){
         var ელ = document.createElement('div')
