@@ -46,7 +46,18 @@ exports.ჩაუშვი=function(მოთხ, პასუხ, მომხ�
                         '</select>'+
                     '</div>'+
                     '<div>'+
-                        '<input type="text" id="სახელი"/>'+
+                            თარგ('სახელი')+':'+
+                        '<div class="მნიშვნელობა">'+
+                            '<input type="text" id="სახელი"/>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="პარამეტრის_უჯრა">'+
+                        '<div class="დასახელება">'+
+                            თარგ('ბმული')+':'+
+                        '</div>'+
+                        '<div class="მნიშვნელობა">'+
+                            '<input type="text" id="ბმული"/>'+
+                        '</div>'+
                     '</div>'+
                     '<div id="ფერები">'+
                     '</div>'+
