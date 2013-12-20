@@ -5,6 +5,10 @@ var საფერე = function(ელემენტი, საწყის�
           
     ნახაზი.id='ფერების_ასარჩევი_ნახაზი'
     
+    ნახაზი.width=170;
+    ნახაზი.height=50;
+        console.log(ნახაზი.width, ნახაზი.height)
+        
     var მონაცემები = კონტ.createImageData(ნახაზი.width, ნახაზი.height)
     
     for(var ი=0;ი<მონაცემები.width;ი++){
@@ -74,14 +78,57 @@ var საფერე = function(ელემენტი, საწყის�
 
     გადახატე_ნახაზი()
     
-    გადახატე_გამადიდებელი(0,0,'#0F0')
+    გადახატე_მიმთითებელი(0,0,'#0F0')
     
+    var დაჭერილი = false
     ნახაზი.addEventListener('mousedown', function(მოვლ){
-        // გასაკეთებელია ხაზების დახატვა ამავე ნახაზზე
-        გადახატე_ნახაზი()
-        გადახატე_გამადიდებელი(მოვლ.offsetX, მოვლ.offsetY, '#0F0')
-        console.log(მოვლ)
+        if(მოვლ.button===0){
+            დაჭერილი=true
+            გადახატე_ნახაზი()
+            გადახატე_მიმთითებელი(მოვლ.layerX, მოვლ.layerY, '#0F0')
+        }
     })
+    
+    ნახაზი.addEventListener('mousemove', function(მოვლ){
+        if(მოვლ.button===0&&დაჭერილი){
+            გადახატე_ნახაზი()
+            გადახატე_მიმთითებელი(მოვლ.layerX, მოვლ.layerY, '#0F0')
+        }
+    })
+    
+    ნახაზი.addEventListener('mouseleave', function(მოვლ){
+        if(მოვლ.button===0&&დაჭერილი){
+            უკუძახილი(ამოიღე_ფერი(მოვლ.layerX, მოვლ.layerY))
+        }
+    })
+    
+    ნახაზი.addEventListener('mouseup', function(მოვლ){
+        if(მოვლ.button===0){
+            დაჭერილი=false
+            უკუძახილი(ამოიღე_ფერი(მოვლ.layerX, მოვლ.layerY))
+        }
+    })
+    
+    window.addEventListener('mouseup', function(მოვლ){
+        if(მოვლ.button===0){
+            დაჭერილი=false
+        }
+    })
+    
+    window.addEventListener('mouseleave', function(მოვლ){
+        if(მოვლ.button===0){
+            დაჭერილი=false
+        }
+    })
+    
+    function ამოიღე_ფერი(ხ,ჯ){
+        var მისამართი = (ხ+მონაცემები.width*ჯ)*4
+            წითელი = მონაცემები.data[მისამართი],
+            მწვანე = მონაცემები.data[მისამართი+1],
+            ლურჯი = მონაცემები.data[მისამართი+2]
+    
+        return 'rgb('+წითელი+','+მწვანე+','+ლურჯი+')'
+    }
     
     ელემენტი.appendChild(ნახაზი)
     ელემენტი.appendChild(გამადიდებელი)
@@ -89,16 +136,23 @@ var საფერე = function(ელემენტი, საწყის�
     function გადახატე_ნახაზი(){
         კონტ.putImageData(მონაცემები, 0, 0)
     }
-    function გადახატე_გამადიდებელი(ხ, ჯ, ფერი){
-        console.log(ხ, ჯ)
-        გამადიდებელი.style.left=ხ+'px'
-        გამადიდებელი.style.top=ჯ+'px'
-        გამადიდებელი.style.backgroundColor=ფერი
-//        გამ_კონტ.beginPath()
-//        გამ_კონტ.fillStyle=ფერი
-//        გამ_კონტ.fillRect(0,0,20,20)
-//        გამ_კონტ.strokeStyle='#000'
-//        გამ_კონტ.strokeRect(0,0,20,20)
+    function გადახატე_მიმთითებელი(ხ, ჯ, ფერი){
+        
+        console.log(ნახაზი.height)
+        კონტ.beginPath()
+        კონტ.fillStyle=ფერი
+        კონტ.strokeStyle='rgb(0,0,0,0.5)'
+        
+        კონტ.moveTo(ხ,0)
+        კონტ.lineTo(ხ,ნახაზი.height)
+        კონტ.stroke()
+        
+        კონტ.moveTo(0,ჯ)
+        კონტ.lineTo(ნახაზი.width,ჯ)
+        კონტ.stroke()
+        
+//        კონტ.strokeRect(0,0,20,20)
+//        კონტ.fillRect(0,0,20,20)
     }
     
     
