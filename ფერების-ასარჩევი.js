@@ -1,13 +1,14 @@
 var საფერე = function(ელემენტი, საწყისი_ფერი, უკუძახილი){
     var ნახაზი = document.createElement('canvas'),
             კონტ = ნახაზი.getContext('2d'),
-            გამადიდებელი = document.createElement('div')
+            არჩეული_ფერი = document.createElement('div')
           
     ნახაზი.id='ფერების_ასარჩევი_ნახაზი'
     
-    ნახაზი.width=170;
+    ნახაზი.width=140;
     ნახაზი.height=50;
-        console.log(ნახაზი.width, ნახაზი.height)
+    
+    არჩეული_ფერი.id='არჩეული_ფერი'
         
     var მონაცემები = კონტ.createImageData(ნახაზი.width, ნახაზი.height)
     
@@ -80,7 +81,8 @@ var საფერე = function(ელემენტი, საწყის�
     
     გადახატე_მიმთითებელი(0,0,'#0F0')
     
-    var დაჭერილი = false
+    var დაჭერილი = false,
+            ბოლო_ხ, ბოლო_ჯ
     ნახაზი.addEventListener('mousedown', function(მოვლ){
         if(მოვლ.button===0){
             დაჭერილი=true
@@ -98,20 +100,20 @@ var საფერე = function(ელემენტი, საწყის�
     
     ნახაზი.addEventListener('mouseleave', function(მოვლ){
         if(მოვლ.button===0&&დაჭერილი){
-            უკუძახილი(ამოიღე_ფერი(მოვლ.layerX, მოვლ.layerY))
         }
     })
     
     ნახაზი.addEventListener('mouseup', function(მოვლ){
         if(მოვლ.button===0){
             დაჭერილი=false
-            უკუძახილი(ამოიღე_ფერი(მოვლ.layerX, მოვლ.layerY))
+            უკუძახილი(ბოლო_ფერი())
         }
     })
     
     window.addEventListener('mouseup', function(მოვლ){
-        if(მოვლ.button===0){
+        if(მოვლ.button===0&&დაჭერილი){
             დაჭერილი=false
+            უკუძახილი(ბოლო_ფერი())
         }
     })
     
@@ -121,8 +123,8 @@ var საფერე = function(ელემენტი, საწყის�
         }
     })
     
-    function ამოიღე_ფერი(ხ,ჯ){
-        var მისამართი = (ხ+მონაცემები.width*ჯ)*4
+    function ბოლო_ფერი(){
+        var მისამართი = (ბოლო_ხ-1+მონაცემები.width*(ბოლო_ჯ-1))*4
             წითელი = მონაცემები.data[მისამართი],
             მწვანე = მონაცემები.data[მისამართი+1],
             ლურჯი = მონაცემები.data[მისამართი+2]
@@ -131,12 +133,14 @@ var საფერე = function(ელემენტი, საწყის�
     }
     
     ელემენტი.appendChild(ნახაზი)
-    ელემენტი.appendChild(გამადიდებელი)
+    ელემენტი.appendChild(არჩეული_ფერი)
     
     function გადახატე_ნახაზი(){
         კონტ.putImageData(მონაცემები, 0, 0)
     }
     function გადახატე_მიმთითებელი(ხ, ჯ, ფერი){
+        ბოლო_ხ=ხ
+        ბოლო_ჯ=ჯ
         
         console.log(ნახაზი.height)
         კონტ.beginPath()
@@ -151,8 +155,7 @@ var საფერე = function(ელემენტი, საწყის�
         კონტ.lineTo(ნახაზი.width,ჯ)
         კონტ.stroke()
         
-//        კონტ.strokeRect(0,0,20,20)
-//        კონტ.fillRect(0,0,20,20)
+        არჩეული_ფერი.style.backgroundColor=ბოლო_ფერი()
     }
     
     
