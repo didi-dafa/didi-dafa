@@ -110,11 +110,11 @@
     background-color:rgba(50, 50, 50, 0.5);
     z-index:100;
 }
-#ფერების_ასარჩევი{
+#ფერის_ასარჩევი{
     position:relative;
     height:50px;
 }
-#ფერების_ასარჩევი_ნახაზი{
+#ფერის_ასარჩევი_ნახაზი{
     position:absolute;
     width:145px;
     height:50px;
@@ -128,6 +128,16 @@
     border: 1px solid #aeaeae;
     border-radius: 3px;
 }
+#სისქის_ასარჩევი{
+    position:relative;
+    width:170px;
+    height:20px;
+}
+#სისქის_ასარჩევი_ნახაზი{
+    position:relative;
+    left:0;
+}
+
 .დამალული{
     visibility:hidden;
 }

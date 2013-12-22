@@ -23,9 +23,13 @@ var ფაილები=[{
         შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
         შიგთავსი:ფს.readFileSync('სახარახურე.js'),
     },{
-        რეგამ:/^\/ფერების-ასარჩევი\.js/i,
+        რეგამ:/^\/ფერის-ასარჩევი\.js/i,
         შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
-        შიგთავსი:ფს.readFileSync('ფერების-ასარჩევი.js'),
+        შიგთავსი:ფს.readFileSync('ფერის-ასარჩევი.js'),
+    },{
+        რეგამ:/^\/სისქის-ასარჩევი\.js/i,
+        შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
+        შიგთავსი:ფს.readFileSync('სისქის-ასარჩევი.js'),
     },{
         რეგამ:/^\/საცხობი\.js/i,
         შიგთავსის_ტიპი:"text/javascript; charset=utf-8",

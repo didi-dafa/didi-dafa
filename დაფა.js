@@ -53,7 +53,9 @@ exports.ჩაუშვი=function(მოთხ, პასუხ, მომხ�
                         '<input type="text" id="სახელი"/>'+
                     '</div>'+
                     '<hr/>'+
-                    '<div id="ფერების_ასარჩევი">'+
+                    '<div id="ფერის_ასარჩევი">'+
+                    '</div>'+
+                    '<div id="სისქის_ასარჩევი">'+
                     '</div>'+
                     '<div id="მომხმარებლები">'+
                     '</div>'+
@@ -85,7 +87,8 @@ exports.ჩაუშვი=function(მოთხ, პასუხ, მომხ�
                 '</div>'+
                 '</div>'+
                 '<script type="text/javascript" src="/საცხობი.js"></script>'+
-                '<script type="text/javascript" src="/ფერების-ასარჩევი.js"></script>'+
+                '<script type="text/javascript" src="/ფერის-ასარჩევი.js"></script>'+
+                '<script type="text/javascript" src="/სისქის-ასარჩევი.js"></script>'+
                 '<script type="text/javascript" src="/გულ-ღვიძლი.js"></script>'+
                 '<script type="text/javascript" src="/სახარახურე.js"></script>'+
             '</body>'+
