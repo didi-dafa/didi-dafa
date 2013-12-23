@@ -535,6 +535,10 @@ var ფუნჯი = {
     },
     დაასრულე: function(ხ, ჯ) {
         this.იხატება = false
+        
+        if(!this.გზა){
+            return
+        }
 
         var გასაგზავნი_გზა = []
         for (var ი = 0; ი < this.გზა.length - 1; ი++) {
