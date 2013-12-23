@@ -18,6 +18,10 @@ Name
 მეგობარი
 Friend
 
+# Others
+სხვები
+Others
+
 # Location
 მდებარეობა
 Location
@@ -76,7 +80,7 @@ Big Board - Common painting board for many people
 
 # Instructions body
 ინსტრუქციების ტანი
-Click right button to change tool.
+Click right mouse button to change tool.
 
 # Everything else description
 სხვა დანარჩენი დახასიათება
