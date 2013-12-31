@@ -593,13 +593,17 @@ var ხელი = {
 
 window.addEventListener("hashchange", მისამართში_შეიცვალა)
 
+var ხელით_მდებარეობის_განახლება=false
 function განაახლე_მდებარეობის_მაჩვენებელი(){
-    window.removeEventListener("hashchange", მისამართში_შეიცვალა)
+    ხელით_მდებარეობის_განახლება=true
     window.location.hash='#'+საც.ხ+','+საც.ჯ
-    window.addEventListener("hashchange", მისამართში_შეიცვალა)
 }
 
 function მისამართში_შეიცვალა(){
+    if(ხელით_მდებარეობის_განახლება){
+        ხელით_მდებარეობის_განახლება=false
+        return
+    }
     var დაჭრილი = window.location.hash.substring(1).split(','),
         ხ=+დაჭრილი[0],
         ჯ=+დაჭრილი[1]
