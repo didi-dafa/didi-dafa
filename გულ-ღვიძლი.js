@@ -1,7 +1,3 @@
-function განაახლე_მდებარეობის_მაჩვენებელი(){
-    window.location.hash='#'+საც.ხ+','+საც.ჯ
-}
-
 var საც=new საცხობი(),
     დაკავშირებული=true,
     ბოლო_ნაქნარის_დრო,
@@ -596,7 +592,13 @@ var ხელი = {
 თქვი_რომ_ფერი_შევიცვალე()
 
 window.addEventListener("hashchange", მისამართში_შეიცვალა)
-        
+
+function განაახლე_მდებარეობის_მაჩვენებელი(){
+    window.removeEventListener("hashchange", მისამართში_შეიცვალა)
+    window.location.hash='#'+საც.ხ+','+საც.ჯ
+    window.addEventListener("hashchange", მისამართში_შეიცვალა)
+}
+
 function მისამართში_შეიცვალა(){
     var დაჭრილი = window.location.hash.substring(1).split(','),
         ხ=+დაჭრილი[0],
@@ -615,4 +617,6 @@ function მისამართში_შეიცვალა(){
 
 მისამართში_შეიცვალა()
 
-window.addEventListener("resize", დაფა.დაალაგე)
+window.onresize = function() {
+    დაფა.დაალაგე()
+}
