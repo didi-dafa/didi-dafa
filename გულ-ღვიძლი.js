@@ -496,15 +496,26 @@ var დაფა = function() {
         }
     })
     
-    ეს.ნახაზი.oncontextmenu = function() {
+    ეს.ნახაზი.addEventListener('dragover', function(მოვლ){
+        console.log('გადავლა')
+    })
+    ეს.ნახაზი.addEventListener('dragleave', function(მოვლ){
+        მოვლ.preventDefault()
+        console.log('დატოვება')
+    })
+    ეს.ნახაზი.addEventListener('drop', function(მოვლ){
+        console.log('ჩამოვარდნა')
+    })
+    
+    ეს.ნახაზი.addEventListener('contextmenu',function(მოვლ) {
+        მოვლ.preventDefault()
         if(საც.მიჭირავს == 'ხელი'){
             საც.მიე_მიჭირავს('ფუნჯი')
         }else{
             საც.მიე_მიჭირავს('ხელი')
         }
         ეს.გააახლეკურსორი();
-        return false
-    }
+    })
     
     return ეს
 }()

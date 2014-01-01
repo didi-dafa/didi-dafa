@@ -81,6 +81,7 @@ var ფაილები=[{
         პასუხ.setHeader("Cache-Control", "max-age=0")
         პასუხ.setHeader("Content-Type", "text/plain; charset=utf-8")
         პასუხ.end("ცოცხალი ვარ")
+        return
     }
     
     მოთხ.პარამები=კითხვის_სიმი.parse(ერლ.parse(მოთხ.url).query)
