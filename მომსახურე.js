@@ -96,6 +96,7 @@ var ფაილები=[{
                     მომხმარებელი=მოდულები.მომხმარებლები.შექმენი(მოთხ, პასუხ)
                 }else if(!მომხმარებელი){
                     პასუხ.statusCode=400;
+                    პასუხ.setHeader("Content-Type", "text/plain; charset=utf-8")
                     პასუხ.end('ცუდი მოთხოვნა');
                     return
                 }
@@ -109,5 +110,6 @@ var ფაილები=[{
     }
     
     პასუხ.statusCode=404;
+    პასუხ.setHeader("Content-Type", "text/plain; charset=utf-8")
     პასუხ.end('ფაილი ვერ მოიძებნა');
 }).listen(9000, '127.0.0.1');
