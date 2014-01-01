@@ -505,7 +505,7 @@ var დაფა = function() {
         ეს.გააახლეკურსორი();
         return false
     }
-
+    
     return ეს
 }()
 
