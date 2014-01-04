@@ -63,15 +63,15 @@
     top:0;
     bottom:0;
 }
-#მომხმარებლები{
+.სია{
     width:100%;
-    height:200px;
+    height:100px;
     overflow-x:hidden;
     overflow-y:scroll;
-    border-radius: 5px;
+    border-radius: 2px;
     background-color: #fff;
 }
-.მომხმარებელი{
+.სიის_ჩანაწერი{
     width:100%;
     clear:both;
     cursor:pointer;
@@ -80,31 +80,23 @@
     position:relative;
     line-height:25px;
 }
-.მომხმარებლის_ფერი{
+.სიის_ფერი{
     position:absolute;
     width:5px;
     height:25px;
 }
-.მომხმარებლის_სტატუსი{
+.სიის_სტატუსი{
     position:absolute;
     left:5px;
     width:14px;
     height:25px;
 }
-.მომხმარებლის_სახელი{
+.სიის_სახელი{
     position:absolute;
     left:19px;
     text-align: left;
     height:25px;
     white-space:nowrap;
-}
-#აქტივობები{
-    width:100%;
-    height:200px;
-    overflow-x:hidden;
-    overflow-y:scroll;
-    border-radius: 5px;
-    background-color: #fff;
 }
 #ლაბი{
     position:absolute;
