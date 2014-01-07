@@ -219,7 +219,7 @@ function გადახატე_ისტორია(){
     for(var ი in ისტორია){
         var ისტ = ისტორია[ი]
 
-        console.log(ისტ)
+        console.log('ისტორია', ისტ)
     }
 })
 
