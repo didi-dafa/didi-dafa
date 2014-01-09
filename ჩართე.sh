@@ -1,5 +1,5 @@
 #!/bin/bash
 cd `dirname $BASH_SOURCE`
-./გააჩერე
+./გააჩერე.sh
 node მომსახურე.js > გამოს 2> შეც &
 echo $! > პროც
