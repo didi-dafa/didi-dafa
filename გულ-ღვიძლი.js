@@ -483,8 +483,6 @@ var დაფა = function() {
         დასვი_წერტილი:function(ხ,ჯ,ფერი,სისქე){
             var ლოკ=this.მომე_ლოკალური_კოორდინატები(ხ,ჯ)
             
-            console.log(ხ,ჯ, ლოკ.ხ,ლოკ.ჯ, ფერი, სისქე)
-            
             this.კონტ.fillStyle=ფერი
             this.კონტ.beginPath();
             this.კონტ.arc(ლოკ.ხ, ლოკ.ჯ, სისქე/2, 0, Math.PI*2, true);
@@ -530,14 +528,14 @@ var დაფა = function() {
     })
     
     ეს.ნახაზი.addEventListener('dragover', function(მოვლ){
-        console.log('გადავლა')
+//        console.log('გადავლა')
     })
     ეს.ნახაზი.addEventListener('dragleave', function(მოვლ){
-        მოვლ.preventDefault()
-        console.log('დატოვება')
+//        მოვლ.preventDefault()
+//        console.log('დატოვება')
     })
     ეს.ნახაზი.addEventListener('drop', function(მოვლ){
-        console.log('ჩამოვარდნა')
+//        console.log('ჩამოვარდნა')
     })
     
     ეს.ნახაზი.addEventListener('contextmenu',function(მოვლ) {
@@ -548,6 +546,10 @@ var დაფა = function() {
             საც.მიე_მიჭირავს('ხელი')
         }
         ეს.გააახლეკურსორი();
+    })
+    
+    ეს.ნახაზი.addEventListener('wheel', function(მოვლ){
+        სასისქე.გაზარდე_სისქე(მოვლ.deltaY/6)
     })
     
     return ეს
