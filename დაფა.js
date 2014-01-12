@@ -57,6 +57,8 @@ exports.ჩაუშვი=function(მოთხ, პასუხ, მომხ�
                     '</div>'+
                     '<div id="სისქის_ასარჩევი" class="ღრეჭო">'+
                     '</div>'+
+                    '<div id="ფერ_სისქის_ისტორია" class="ღრეჭო">'+
+                    '</div>'+
                     '<hr/>'+
                     '<div data-თარგმანი="სხვები" class="ღრეჭო">'+
                         თარგ('სხვები')+
@@ -88,6 +90,7 @@ exports.ჩაუშვი=function(მოთხ, პასუხ, მომხ�
                 '<script type="text/javascript" src="/საცხობი.js"></script>'+
                 '<script type="text/javascript" src="/ფერის-ასარჩევი.js"></script>'+
                 '<script type="text/javascript" src="/სისქის-ასარჩევი.js"></script>'+
+                '<script type="text/javascript" src="/ფერ-სისქის-ისტორია.js"></script>'+
                 '<script type="text/javascript" src="/გულ-ღვიძლი.js"></script>'+
                 '<script type="text/javascript" src="/სახარახურე.js"></script>'+
             '</body>'+
