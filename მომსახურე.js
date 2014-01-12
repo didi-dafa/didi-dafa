@@ -31,6 +31,10 @@ var ფაილები=[{
         შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
         შიგთავსი:ფს.readFileSync('ქვედა/სისქის-ასარჩევი.js'),
     },{
+        რეგამ:/^\/ფერ-სისქის-ისტორია\.js/i,
+        შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
+        შიგთავსი:ფს.readFileSync('ქვედა/ფერ-სისქის-ისტორია.js'),
+    },{
         რეგამ:/^\/საცხობი\.js/i,
         შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
         შიგთავსი:ფს.readFileSync('ქვედა/საცხობი.js'),
