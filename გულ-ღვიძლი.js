@@ -507,6 +507,14 @@ var დაფა = function() {
         if (მოვლ.button===0) {
             დაჭერილი=true
             რაც_მიჭირავს().დაიწყე(მოვლ.clientX, მოვლ.clientY)
+        } else if(მოვლ.button==1){
+            var სურათი = ეს.კონტ.getImageData(0,0,ეს.ნახაზი.width, ეს.ნახაზი.height),
+                ი = (მოვლ.clientX+ეს.კანტი.ხ + (მოვლ.clientY+ეს.კანტი.ჯ) * სურათი.width) * 4,
+                წითელი = სურათი.data[ი],
+                მწვანე = სურათი.data[ი+1],
+                ლურჯი = სურათი.data[ი+2]
+                
+            საფერე.მიე_ფერი(წითელი, მწვანე, ლურჯი)
         }
     })
     ეს.ნახაზი.addEventListener('mousemove', function(მოვლ){
