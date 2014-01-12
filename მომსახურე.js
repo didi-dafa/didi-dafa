@@ -17,27 +17,27 @@ var
 var ფაილები=[{
         რეგამ:/^\/გულ-ღვიძლი\.js/i,
         შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
-        შიგთავსი:ფს.readFileSync('გულ-ღვიძლი.js'),
+        შიგთავსი:ფს.readFileSync('ქვედა/გულ-ღვიძლი.js'),
     },{
         რეგამ:/^\/სახარახურე\.js/i,
         შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
-        შიგთავსი:ფს.readFileSync('სახარახურე.js'),
+        შიგთავსი:ფს.readFileSync('ქვედა/სახარახურე.js'),
     },{
         რეგამ:/^\/ფერის-ასარჩევი\.js/i,
         შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
-        შიგთავსი:ფს.readFileSync('ფერის-ასარჩევი.js'),
+        შიგთავსი:ფს.readFileSync('ქვედა/ფერის-ასარჩევი.js'),
     },{
         რეგამ:/^\/სისქის-ასარჩევი\.js/i,
         შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
-        შიგთავსი:ფს.readFileSync('სისქის-ასარჩევი.js'),
+        შიგთავსი:ფს.readFileSync('ქვედა/სისქის-ასარჩევი.js'),
     },{
         რეგამ:/^\/საცხობი\.js/i,
         შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
-        შიგთავსი:ფს.readFileSync('საცხობი.js'),
+        შიგთავსი:ფს.readFileSync('ქვედა/საცხობი.js'),
     },{
         რეგამ:/^\/სახე\.css/i,
         შიგთავსის_ტიპი:"text/css; charset=utf-8",
-        შიგთავსი:ფს.readFileSync('სახე.css'),
+        შიგთავსი:ფს.readFileSync('ქვედა/სახე.css'),
     },{
         რეგამ:/^\/სურათები\/ლოგო\.png/i,
         შიგთავსის_ტიპი:"image/png",
