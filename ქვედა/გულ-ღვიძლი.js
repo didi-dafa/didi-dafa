@@ -557,7 +557,7 @@ var დაფა = function() {
     })
     
     ეს.ნახაზი.addEventListener('wheel', function(მოვლ){
-        სასისქე.გაზარდე_სისქე(მოვლ.deltaY/6)
+        სასისქე.გაზარდე_სისქე((მოვლ.deltaY*-1)/6)
     })
     
     return ეს
