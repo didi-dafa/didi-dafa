@@ -1,14 +1,32 @@
 var ფერის_ასარჩევი = function(ელემენტი, საწყისი_ფერი, უკუძახილი){
+    var გაჟღენთა = function(ფერი,სიგანე,სიმაღლე){
+        var ნახაზი = document.createElement('canvas'),
+                კონტ = ნახაზი.getContext('2d')
+        
+        ნახაზი.width=სიგანე
+        ნახაზი.height=სიმაღლე
+        
+        return {
+            ფერი:ფერი,
+            ნახაზი:ნახაზი,
+            მიე_ფერი:function(ფერი){
+                this.ფერი=ფერი
+                
+                console.log('აქ გაჟღენთა უნდა შეიცვალოს')
+            },
+        }
+    }(საწყისი_ფერი, 20, 50)
     var ნახაზი = document.createElement('canvas'),
             კონტ = ნახაზი.getContext('2d'),
-            არჩეული_ფერი = document.createElement('div')
+            არჩეული = document.createElement('div')
           
+    გაჟღენთა.id='ფერის_ასარჩევი_გაჟღენთა'
     ნახაზი.id='ფერის_ასარჩევი_ნახაზი'
     
-    ნახაზი.width=145;
+    ნახაზი.width=120;
     ნახაზი.height=50;
     
-    არჩეული_ფერი.id='არჩეული_ფერი'
+    არჩეული.id='ფერის_ასარჩევი_არჩეული'
         
     var მონაცემები = კონტ.createImageData(ნახაზი.width, ნახაზი.height)
     
@@ -104,6 +122,7 @@ var ფერის_ასარჩევი = function(ელემენტი
     ნახაზი.addEventListener('mouseup', function(მოვლ){
         if(მოვლ.button===0){
             დაჭერილი=false
+            გაჟღენთა.მიე_ფერი(ბოლო_ფერი())
             უკუძახილი(ბოლო_ფერი())
         }
     })
@@ -111,6 +130,7 @@ var ფერის_ასარჩევი = function(ელემენტი
     window.addEventListener('mouseup', function(მოვლ){
         if(მოვლ.button===0&&დაჭერილი){
             დაჭერილი=false
+            გაჟღენთა.მიე_ფერი(ბოლო_ფერი())
             უკუძახილი(ბოლო_ფერი())
         }
     })
@@ -138,7 +158,8 @@ var ფერის_ასარჩევი = function(ელემენტი
         return რიცხვებიდან_ფერი(წითელი, მწვანე, ლურჯი)
     }
     
-    ელემენტი.appendChild(არჩეული_ფერი)
+    ელემენტი.appendChild(არჩეული)
+    ელემენტი.appendChild(გაჟღენთა.ნახაზი)
     ელემენტი.appendChild(ნახაზი)
     
     function გადახატე_ნახაზი(){
@@ -163,7 +184,7 @@ var ფერის_ასარჩევი = function(ელემენტი
         კონტ.lineTo(ნახაზი.width,ჯ)
         კონტ.stroke()
         
-        არჩეული_ფერი.style.backgroundColor=ბოლო_ფერი()
+        არჩეული.style.backgroundColor=ბოლო_ფერი()
     }
     function ფერიდან_რიცხვები(ფერი){
         var მთხვ = ფერი.match(/rgb\((\d*),(\d*),(\d*)\)/)

@@ -116,7 +116,13 @@
     right:0;
     margin-left:5px;
 }
-#არჩეული_ფერი{
+#ფერის_ასარჩევი_გაჟღენთა{
+    display:inline-block;
+    width:20px;
+    height:100%;
+    margin-left:5px;
+}
+#ფერის_ასარჩევი_არჩეული{
     display:inline-block;
     width:20px;
     height:100%;

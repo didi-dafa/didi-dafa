@@ -11,6 +11,11 @@ exports.ჩაუშვი=function(მოთხ, პასუხ, მომხ�
             '<head>'+
                 '<link rel="stylesheet" href="/სახე.css">'+
                 '<title data-თარგმანი="დიდი დაფა - საერთო სახატავი ბევრი ადამიანისთვის">'+ თარგ('დიდი დაფა - საერთო სახატავი ბევრი ადამიანისთვის')+'</title>'+
+                '<script type="text/javascript" src="/ზოგადი.js"></script>'+
+                '<script type="text/javascript" src="/საცხობი.js"></script>'+
+                '<script type="text/javascript" src="/ფერის-ასარჩევი.js"></script>'+
+                '<script type="text/javascript" src="/სისქის-ასარჩევი.js"></script>'+
+                '<script type="text/javascript" src="/ფერ-სისქის-ისტორია.js"></script>'+
             '</head>'+
             '<body>'+
                 '<div id="მთავარი_ნაჭერი">'+
@@ -87,10 +92,7 @@ exports.ჩაუშვი=function(მოთხ, პასუხ, მომხ�
                 '</div>'+
                 '</div>'+
                 '</div>'+
-                '<script type="text/javascript" src="/საცხობი.js"></script>'+
-                '<script type="text/javascript" src="/ფერის-ასარჩევი.js"></script>'+
-                '<script type="text/javascript" src="/სისქის-ასარჩევი.js"></script>'+
-                '<script type="text/javascript" src="/ფერ-სისქის-ისტორია.js"></script>'+
+                
                 '<script type="text/javascript" src="/გულ-ღვიძლი.js"></script>'+
                 '<script type="text/javascript" src="/სახარახურე.js"></script>'+
             '</body>'+

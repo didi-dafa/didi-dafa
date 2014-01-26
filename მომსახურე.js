@@ -19,6 +19,10 @@ var ფაილები=[{
         შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
         შიგთავსი:ფს.readFileSync('ქვედა/გულ-ღვიძლი.js'),
     },{
+        რეგამ:/^\/ზოგადი\.js/i,
+        შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
+        შიგთავსი:ფს.readFileSync('ქვედა/ზოგადი.js'),
+    },{
         რეგამ:/^\/სახარახურე\.js/i,
         შიგთავსის_ტიპი:"text/javascript; charset=utf-8",
         შიგთავსი:ფს.readFileSync('ქვედა/სახარახურე.js'),
