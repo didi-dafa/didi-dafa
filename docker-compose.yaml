@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  server:
+    image: hertzg/didi-dafa:dev
+    build: .
+    ports:
+      - 9000:9000
+    volumes:
+      - dafa_data:/app/მდგრადობა
+
+volumes:
+  dafa_data:
