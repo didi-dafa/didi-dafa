@@ -1,0 +1,22 @@
+{
+  "name": "didi-dafa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./მომსახურე.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/didi-dafa/didi-dafa.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/didi-dafa/didi-dafa/issues"
+  },
+  "homepage": "https://github.com/didi-dafa/didi-dafa#readme",
+  "dependencies": {
+    "canvas": "^2.6.1"
+  }
+}
