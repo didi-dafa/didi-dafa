@@ -1,5 +1,7 @@
 FROM node:12-alpine
 
+EXPOSE 9000
+
 WORKDIR /app
 
 RUN apk add --no-cache build-base \
