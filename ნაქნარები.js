@@ -125,7 +125,7 @@ setInterval(function(){
 }, 5000)
 
 function ჩატვირთე_შენახულები(){
-    ფს.readFile('ნაქნარები.json', function(შეც, შიგთავსი){
+    ფს.readFile('./მდგრადობა/ნაქნარები.json', function(შეც, შიგთავსი){
         if(შეც) { console.log(შეც); return }
         ნაქნარები=JSON.parse(შიგთავსი)
     })
@@ -138,7 +138,7 @@ setInterval(function(){
         return
     }
     შეიცვალა=false
-    ფს.writeFile('ნაქნარები.json', JSON.stringify(ნაქნარები), function(შეც){
+    ფს.writeFile('./მდგრადობა/ნაქნარები.json', JSON.stringify(ნაქნარები), function(შეც){
             if(შეც) { console.log(შეც) }
         })
 }, 5000)

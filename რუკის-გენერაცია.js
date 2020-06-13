@@ -6,7 +6,7 @@ var სიგრძე=1024,
 
 function კიდურები(უკუძახილი){
     var მინ=null, მაქს=null
-    ფს.readdir('საცავი', function(შეც, ფაილები){
+    ფს.readdir('./მდგრადობა/საცავი', function(შეც, ფაილები){
         if(შეც){console.log(შეც); return}
         
         for(var ფ in ფაილები){

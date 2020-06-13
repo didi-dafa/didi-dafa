@@ -1,4 +1,4 @@
-var 
+var
     ზტგპ=require('http'),
     ფს=require('fs'),
     კითხვის_სიმი=require('querystring'),
@@ -9,7 +9,7 @@ var
             საცავი:require('./საცავი'),
             თარგმანი:require('./თარგმანი')(),
         }
-       
+
        ეს.მომხმარებლები = require('./მომხმარებლები')(ეს.ნაქნარები, ეს.თარგმანი)
        return ეს
     }()
@@ -88,14 +88,14 @@ var ფაილები=[{
         დინამიური_შიგთავსი:require('./მომე-ისტორია').ჩაუშვი,
     }]
 
-ზტგპ.createServer(function(მოთხ, პასუხ){
+var მომ = ზტგპ.createServer(function(მოთხ, პასუხ){
     if(decodeURIComponent(მოთხ.url)=='/ცდა'){
         პასუხ.setHeader("Cache-Control", "max-age=0")
         პასუხ.setHeader("Content-Type", "text/plain; charset=utf-8")
         პასუხ.end("ცოცხალი ვარ")
         return
     }
-    
+
     მოთხ.პარამები=კითხვის_სიმი.parse(ერლ.parse(მოთხ.url).query)
     for(var ფ in ფაილები){
         if(decodeURIComponent(მოთხ.url).match(ფაილები[ფ].რეგამ)){
@@ -114,15 +114,20 @@ var ფაილები=[{
                     return
                 }
                 მომხმარებელი.აქტივობა()
-                
+
                 პასუხ.setHeader("Cache-Control", "max-age=0")
                 ფაილი.დინამიური_შიგთავსი(მოთხ, პასუხ, მომხმარებელი, მოდულები)
             }
             return
         }
     }
-    
+
     პასუხ.statusCode=404;
     პასუხ.setHeader("Content-Type", "text/plain; charset=utf-8")
     პასუხ.end('ფაილი ვერ მოიძებნა');
-}).listen(9000, '127.0.0.1');
+})
+
+მომ.listen(9000, () => {
+    console.log('Listening @ %j', მომ.address())
+});
+console.log('Starting')
