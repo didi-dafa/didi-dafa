@@ -1,7 +1,8 @@
-.DS_Store
+.DS_Store/
 საცავი/
-პროც/
-გამოს/
-შეც/
+პროც
+გამოს
+შეც
 ნაქნარები.json
 .idea/
+node_modules/
