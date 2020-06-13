@@ -20,6 +20,5 @@ COPY ./*.js ./
 RUN ls -lah ./
 
 RUN mkdir -p ./მდგრადობა/საცავი/
-RUN touch ./მდგრადობა/ნაქნარები.json
 
 CMD node ./მომსახურე.js
