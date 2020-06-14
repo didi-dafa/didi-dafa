@@ -1,0 +1,87 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dididafa
+  namespace: dididafa
+  labels:
+    app: dididafa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dididafa
+  template:
+    metadata:
+      labels:
+        app: dididafa
+    spec:
+      containers:
+        - name: dididafa
+          image: dididafa/didi-dafa:latest
+          ports:
+            - name: "http"
+              containerPort: 9000
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 200m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dididafa
+  namespace: dididafa
+  labels:
+    app: dididafa
+spec:
+  selector:
+    app: dididafa
+  ports:
+    - name: "http"
+      port: 80
+      targetPort: "http"
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: dididafa
+  namespace: dididafa
+  labels:
+    app: dididafa
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  rules:
+    - host: dididafa.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: dididafa
+              servicePort: http
+  tls:
+    - hosts:
+        - dididafa.com
+      secretName: dididafa-prod-cert
+---
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: dididafa
+  namespace: dididafa
+  labels:
+    app: dididafa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1beta1
+    kind: Deployment
+    name: dididafa
+  minReplicas: 1
+  maxReplicas: 1
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: 70
