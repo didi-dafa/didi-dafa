@@ -2,7 +2,9 @@
 
 Common painting board for many people
 
-## Run in Docker
+## Running
+Multi-arch (`linux/amd64,linux/386,linux/arm64,linux/ppc64le,linux/arm/v7,linux/arm/v6`) build on DockerHub @ [dididafa/didi-dafa](https://hub.docker.com/repository/docker/dididafa/didi-dafa/tags?page=1)
+
 ```shell script
 docker volume create dafa_data
 docker run -d -v dafa_data:/app/მდგრადობა -p 9000:9000 dididafa/didi-dafa
