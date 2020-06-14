@@ -2,6 +2,11 @@
 
 Common painting board for many people
 
+# (temp) Demo
+
+You can visit the project demo at [dididafa.hertz.gg](https://dididafa.hertz.gg)
+
+
 ## Running
 Multi-arch (`linux/amd64,linux/386,linux/arm64,linux/ppc64le,linux/arm/v7,linux/arm/v6`) build on DockerHub @ [dididafa/didi-dafa](https://hub.docker.com/repository/docker/dididafa/didi-dafa/tags?page=1)
 
